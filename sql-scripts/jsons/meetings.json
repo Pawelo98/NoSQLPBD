@@ -1,0 +1,10 @@
+[{"Id":1, "Building":1, "Room":"176", "Initiator":"admin", "Estimated_length":4.24, "Meeting_date":"2019-02-03"},
+ {"Id":2, "Building":5, "Room":"844", "Initiator":"admin", "Estimated_length":4.77, "Meeting_date":"2020-12-04"},
+ {"Id":3, "Building":4, "Room":"173", "Initiator":"admin", "Estimated_length":3.35, "Meeting_date":"2021-03-13"},
+ {"Id":4, "Building":6, "Room":"744", "Initiator":"administrative", "Estimated_length":1.51, "Meeting_date":"2019-09-22"},
+ {"Id":5, "Building":9, "Room":"542", "Initiator":"administrative", "Estimated_length":3.51, "Meeting_date":"2019-07-19"},
+ {"Id":6, "Building":6, "Room":"293", "Initiator":"admin", "Estimated_length":0.93, "Meeting_date":"2020-12-08"},
+ {"Id":7, "Building":11, "Room":"437", "Initiator":"administrative", "Estimated_length":2.04, "Meeting_date":"2020-01-05"},
+ {"Id":8, "Building":15, "Room":"240", "Initiator":"admin", "Estimated_length":4.46, "Meeting_date":"2022-11-10"},
+ {"Id":9, "Building":14, "Room":"672", "Initiator":"physical", "Estimated_length":2.76, "Meeting_date":"2019-01-24"},
+ {"Id":10, "Building":16, "Room":"924", "Initiator":"admin", "Estimated_length":2.4, "Meeting_date":"2019-08-30"}]
