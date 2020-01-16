@@ -1,0 +1,6 @@
+[{"username":"admin", "authority":"ROLE_ADMIN"},
+ {"username":"admin", "authority":"ROLE_ADMINISTRATIVE"},
+ {"username":"admin", "authority":"ROLE_PHYSICAL"},
+ {"username":"administrative", "authority":"ROLE_ADMINISTRATIVE"},
+ {"username":"administrative", "authority":"ROLE_PHYSICAL"},
+ {"username":"physical", "authority":"ROLE_PHYSICAL"}]
