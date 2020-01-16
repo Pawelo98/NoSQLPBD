@@ -1,0 +1,4 @@
+[{"Id":1, "Name":"Germany 2019", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
+ {"Id":2, "Name":"Germany 2018", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
+ {"Id":3, "Name":"Poland 2019", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
+ {"Id":4, "Name":"Poland 2018", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1}]
