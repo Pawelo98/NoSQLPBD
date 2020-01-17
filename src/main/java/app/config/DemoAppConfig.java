@@ -13,6 +13,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -23,6 +26,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.mongodb.MongoClient;
 
 @Configuration
 @EnableWebMvc
@@ -130,6 +134,16 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		
 		return viewResolver;
+	}
+	
+	@Bean
+	public MongoDbFactory mongoDbFactory() {
+		return new SimpleMongoDbFactory(new MongoClient("localhost", 27017), "ClubManagement");
+	}
+	
+	@Bean
+	public MongoTemplate mongoTemplate() {
+		return new MongoTemplate(mongoDbFactory());
 	}
 	
 }

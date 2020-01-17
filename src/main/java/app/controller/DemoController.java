@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import app.entity.Referee;
 import app.service.RefereeService;
+import app.dao.RefereeDAOImpl;
 import app.entity.Building;
 import app.entity.Club;
 import app.entity.Invite;
@@ -64,6 +65,9 @@ public class DemoController {
 	
 	@Autowired
 	BuildingService buildingService;
+	
+	@Autowired
+	RefereeDAOImpl refereDAOImpl;
 	
 	@GetMapping("/")
 	public String showHome(Model model) {
@@ -190,7 +194,7 @@ public class DemoController {
 		
 	        List<Object[]> leagueTable = new ArrayList<Object[]>();
 	        
-	        //dodanie miejsc dla klubów
+	        //dodanie miejsc dla klubï¿½w
 	        for (int k = 0; k < clubFromDB3.size(); k++) {
 	        	Object [] tempLT = {k+1 + ".",clubFromDB3.get(k)[0],clubFromDB3.get(k)[1],clubFromDB3.get(k)[2],clubFromDB3.get(k)[3],clubFromDB3.get(k)[4]};
 	        	leagueTable.add(tempLT);
@@ -246,7 +250,8 @@ public class DemoController {
 	@GetMapping("/referees")
 	public String listReferees(Model theModel) {
 		
-		List<Referee> referees = refereeService.getReferees();
+		List<Referee> referees = refereeService.getRefereesMongo();
+//		List<Referee> referees = refereDAOImpl.findAll();
 		
 		theModel.addAttribute("referees", referees);
 		
@@ -295,7 +300,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "Türkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Tï¿½rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
@@ -341,7 +346,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "Türkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Tï¿½rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"

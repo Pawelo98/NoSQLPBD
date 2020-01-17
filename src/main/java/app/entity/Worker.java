@@ -18,9 +18,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="Workers")
+@Document
+//@Entity
+//@Table(name="Workers")
 public class Worker {
 
 	public enum Department { Greenkeepers, Accountants, Masseurs, Cleaners, Players };
@@ -28,49 +30,49 @@ public class Worker {
 	public enum Position { Goalkeeper, Defender, Midfielder, Striker };
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int worker_id;
 	
-	@Column(name="Name")
+	//@Column(name="Name")
 	private String name;
 	
-	@Column(name="Surname")
+	//@Column(name="Surname")
 	private String surname;
 	
-	@Column(name="Earnings")
+	//@Column(name="Earnings")
 	private float earnings;
 	
-	@Column(name="Department")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Department")
+	//@Enumerated(EnumType.STRING)
 	private Department department;
 	
-	@Column(name="Is_player")
+	//@Column(name="Is_player")
 	private boolean isPlayer;
 	
-	@Column(name="Is_injured")
+	//@Column(name="Is_injured")
 	private boolean isInjured;
 	
-	@Column(name="Shirt_number")
+	//@Column(name="Shirt_number")
 	private int shirtNumber;
 	
-	@Column(name="Strong_foot")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Strong_foot")
+	//@Enumerated(EnumType.STRING)
 	private StrongFoot strongFoot;
 	
-	@Column(name="Height")
+	//@Column(name="Height")
 	private int height;
 	
-	@Column(name="Weight")
+	//@Column(name="Weight")
 	private int weight;
 	
-	@Column(name="Position")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Position")
+	//@Enumerated(EnumType.STRING)
 	private Position position;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Club")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Club")
 	private Club club;
 	
 //	@Column(name="club")

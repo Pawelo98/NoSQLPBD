@@ -13,4 +13,7 @@ public interface RefereeDAO {
 	public Referee getReferee(int theId);
 
 	public void deleteReferee(int theId);
+	
+	public Referee findRefereeById(int theId);
+	public List<Referee> findAllReferees();
 }
