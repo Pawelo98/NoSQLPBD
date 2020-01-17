@@ -13,8 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="authorities")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+//@Entity
+//@Table(name="authorities")
+@Document
 public class Authority implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -42,12 +45,12 @@ public class Authority implements Serializable {
 class AuthorityId implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Username")
+//	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+//			CascadeType.DETACH, CascadeType.REFRESH})
+//	@JoinColumn(name="Username")
 	private User user;
 
-	@Column(name="authority")
+	//@Column(name="authority")
 	private String authority;
 	
 	public AuthorityId() {

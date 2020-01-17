@@ -15,17 +15,20 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="Leagues")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+//@Entity
+//@Table(name="Leagues")
 public class League {
 
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int league_id;
 	
-	@Column(name="Name")
+	//@Column(name="Name")
 	private String name;
 	
 	public enum Nationality { Afghanistan, Albania, Algeria, AmericanSamoa ("American Samoa"), Andorra, Angola, Anguilla,
@@ -88,22 +91,22 @@ public class League {
 	    }
     };
     
-    @Column(name="Nationality")
-	@Enumerated(EnumType.STRING)
+    //@Column(name="Nationality")
+	//@Enumerated(EnumType.STRING)
 	private Nationality nationality;
     
-    @Column(name="Level")
+   // @Column(name="Level")
 	private int level;
     
-    @Column(name="Win_pts")
+    //@Column(name="Win_pts")
 	private int win_pts;
     
-    @Column(name="Draw_pts")
+    //@Column(name="Draw_pts")
 	private int draw_pts;
     
-    @OneToMany(mappedBy="league",
-    		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-    				CascadeType.DETACH, CascadeType.REFRESH})
+    //@OneToMany(mappedBy="league",
+    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+    //				CascadeType.DETACH, CascadeType.REFRESH})
     private List<Match> matches;
 
     public League() {
