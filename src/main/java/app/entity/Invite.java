@@ -10,26 +10,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="Invites")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+//@Entity
+//@Table(name="Invites")
 public class Invite {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int invite_id;
 	
-	@Column(name="Message")
+	//@Column(name="Message")
 	private String message;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Meeting")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Meeting")
 	private Meeting meeting;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Worker")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Worker")
 	private User worker;
 	
 	public Invite() {

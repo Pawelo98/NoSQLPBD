@@ -15,6 +15,8 @@ public interface WorkerDAO {
 	public void deleteWorker(int theId);
 
 	public String getSumOfSalary(int theId);
+
+	void addWorker(Worker worker);
 	 
 	
 }

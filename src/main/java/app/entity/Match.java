@@ -22,10 +22,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name="Matches")
+@Document
+//@Entity
+//@Table(name="Matches")
 public class Match {
 	
 	public enum Winner { One ("1"), Two ("2"), Zero ("0");
@@ -45,48 +47,48 @@ public class Match {
     };
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int match_id;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Host")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Host")
 	private Club host;
 	
 	
 	
-	 @ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			 CascadeType.DETACH, CascadeType.REFRESH}) 
-	 @JoinColumn(name="Visitor")
+	 //@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		 CascadeType.DETACH, CascadeType.REFRESH}) 
+	 //@JoinColumn(name="Visitor")
 	 private Club visitor;
 	 
 	
-	@Column(name="Home_goals")
+	//@Column(name="Home_goals")
 	private int home_goals;
 	
-	@Column(name="Away_goals")
+	//@Column(name="Away_goals")
 	private int away_goals;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	@Column(name="Game_date")
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//@Temporal(TemporalType.DATE)
+	//@Column(name="Game_date")
 	private Date game_date;
 	
-	@Column(name="Winner")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Winner")
+	//@Enumerated(EnumType.STRING)
 	private Winner winner;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-    				CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="League")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+    //				CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="League")
 	private League league;
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH,},fetch = FetchType.EAGER)
-	@JoinTable(name="refereeing",
-			joinColumns=@JoinColumn(name="Match_id"),
-			inverseJoinColumns=@JoinColumn(name="Referee_id"))
+//	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+//			CascadeType.DETACH, CascadeType.REFRESH,},fetch = FetchType.EAGER)
+//	@JoinTable(name="refereeing",
+//			joinColumns=@JoinColumn(name="Match_id"),
+//			inverseJoinColumns=@JoinColumn(name="Referee_id"))
 	private List<Referee> referees;
 	
 	public Match() {
