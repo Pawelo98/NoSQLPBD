@@ -15,9 +15,9 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-////	@Autowired
-////	private DataSource securityDataSource;
-//
+//	@Autowired
+//	private DataSource securityDataSource;
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -29,12 +29,10 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		.withUser("admin").password("{noop}admin").roles("ADMIN","ADMINISTRATIVE","PHYSICAL");
 		
 	}
-//
+
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
 //
-//		
-//		
 //		http.authorizeRequests()
 //				.anyRequest().authenticated()
 //			.and()

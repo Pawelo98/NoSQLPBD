@@ -16,4 +16,6 @@ public interface RefereeDAO {
 	
 	public Referee findRefereeById(int theId);
 	public List<Referee> findAllReferees();
+
+	void addReferee(Referee referee);
 }

@@ -30,4 +30,6 @@ public interface MatchDAO {
 	List<Match> getPastMatchesForClub(int theId);
 
 	List<Match> getFutureMatchesForClub(int theId);
+
+	void addMatch(Match match);
 }

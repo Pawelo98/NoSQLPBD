@@ -15,4 +15,6 @@ public interface MeetingDAO {
 	public void saveMeeting(Meeting meeting);
 	
 	public Meeting getMeeting(int id);
+
+	void addMeeting(Meeting meeting);
 }

@@ -10,10 +10,10 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Referee;
+import app.entity.User;
 
 @Repository
 public class RefereeDAOImpl implements RefereeDAO {
-
 	
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -29,7 +29,16 @@ public class RefereeDAOImpl implements RefereeDAO {
 //		
 //		List<Referee> referees = query.getResultList();
 		
-		return null;
+		return mongoTemplate.findAll(Referee.class, COLLECTION_NAME);
+	}
+	
+	@Override
+	public void addReferee(Referee referee) {
+		if (!mongoTemplate.collectionExists(Referee.class)) {
+            mongoTemplate.createCollection(Referee.class);
+
+        }
+        mongoTemplate.insert(referee, COLLECTION_NAME);
 	}
 
 	@Override
@@ -38,6 +47,7 @@ public class RefereeDAOImpl implements RefereeDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(referee);
+		mongoTemplate.save(referee);
 	}
 
 	@Override
@@ -58,7 +68,8 @@ public class RefereeDAOImpl implements RefereeDAO {
 //		theQuery.setParameter("refereeId", theId);
 //		
 //		theQuery.executeUpdate();
-		
+		Referee referee = mongoTemplate.findById(theId, Referee.class);
+		mongoTemplate.remove(referee, COLLECTION_NAME);
 	}
 	
 	@Override
