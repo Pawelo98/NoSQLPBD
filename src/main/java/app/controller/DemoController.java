@@ -75,8 +75,10 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Match> matches = matchesService.getPastMatches(curr.getClub().getClub_id());
-		List<Match> matchesFuture = matchesService.getFutureMatches(curr.getClub().getClub_id());
+		//List<Match> matches = matchesService.getPastMatches(curr.getClub().getClub_id());
+		List<Match> matches = new ArrayList<Match>();
+		//List<Match> matchesFuture = matchesService.getFutureMatches(curr.getClub().getClub_id());
+		List<Match> matchesFuture = new ArrayList<Match>();
 		
 		List<Meeting> meetingsPast = meetingsService.getPastMeetingsForUser(username);
 		List<Invite> invitesPast = invitesService.getPastInvitesForUser(username);

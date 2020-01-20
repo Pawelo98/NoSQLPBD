@@ -19,7 +19,7 @@ import javax.persistence.Table;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collection="referees")
+@Document
 public class Referee {
 
 //	public enum Nationality { Afghanistan, Albania, Algeria, AmericanSamoa ("American Samoa"), Andorra, Angola, Anguilla,

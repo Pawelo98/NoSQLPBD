@@ -25,7 +25,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 //@Entity
 //@Table(name="Users")
 public class User {
-	
 
 		@Id
 		//@Column(name="username")
