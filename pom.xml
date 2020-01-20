@@ -39,6 +39,12 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate.ogm</groupId>
+		    <artifactId>hibernate-ogm-mongodb</artifactId>
+		    <version>4.2.0.Final</version>
+		</dependency>
 
 		<!-- Add Jackson for JSON converters -->
 		<dependency>
@@ -101,6 +107,34 @@
    			<artifactId>javafaker</artifactId>
     		<version>1.0.1</version>
 		</dependency>
+		
+		<!-- Mongo i bongo-->
+		<dependency>
+    		<groupId>org.springframework.data</groupId>
+    		<artifactId>spring-data-mongodb</artifactId>
+  			 <version>2.1.9.RELEASE</version>
+		</dependency>
+		
+			<dependency>
+    		<groupId>org.mongodb</groupId>
+    		<artifactId>mongo-java-driver</artifactId>
+  			 <version>3.12.0</version>
+		</dependency>
+    
+			<dependency>
+    		<groupId>org.springframework.data</groupId>
+    		<artifactId>spring-data-releasetrain</artifactId>
+    		<version>Lovelace-SR9</version>
+   			 <type>pom</type>
+   			 <scope>import</scope>
+		</dependency>
+		
+        <!-- log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
 		
 		<!-- Spring Security -->
 		<!-- spring-security-web and spring-security-config -->

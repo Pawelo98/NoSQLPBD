@@ -18,54 +18,55 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name="Users")
+@Document
+//@Entity
+//@Table(name="Users")
 public class User {
-	
 
 		@Id
-		@Column(name="username")
+		//@Column(name="username")
 		private String username;
 			
-		@Column(name="password")
+		//@Column(name="password")
 		private String password;
 		
-		@Column(name="enabled")
+		//@Column(name="enabled")
 		private int enabled;
 	
-		@DateTimeFormat(pattern = "yyyy-MM-dd")
-		@Temporal(TemporalType.DATE)
-		@Column(name="Registration_date")
+		//@DateTimeFormat(pattern = "yyyy-MM-dd")
+		//@Temporal(TemporalType.DATE)
+		//@Column(name="Registration_date")
 		private Date registrationDate;
 		
-		@Column(name="Name")
+		//@Column(name="Name")
 		private String name;
 		
-		@Column(name="Surname")
+		//@Column(name="Surname")
 		private String surname;
 		
-		@Column(name="Address")
+		//@Column(name="Address")
 		private String address;
 		
-		@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-				CascadeType.DETACH, CascadeType.REFRESH})
-		@JoinColumn(name="Club")
+		//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+		//		CascadeType.DETACH, CascadeType.REFRESH})
+		//@JoinColumn(name="Club")
 		private Club club;
 		
-		@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-				CascadeType.REFRESH}, fetch = FetchType.EAGER)
+		//@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+		//		CascadeType.REFRESH}, fetch = FetchType.EAGER)
 		private Set<Authority> authorities;
 		
-		@OneToMany(mappedBy="worker",
-	    		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-	    				CascadeType.DETACH, CascadeType.REFRESH})
+		//@OneToMany(mappedBy="worker",
+	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	    //				CascadeType.DETACH, CascadeType.REFRESH})
 	    private Set<Invite> invites;
 		
-		@OneToMany(mappedBy="initiator",
-	    		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-	    				CascadeType.DETACH, CascadeType.REFRESH})
+		//@OneToMany(mappedBy="initiator",
+	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	    //				CascadeType.DETACH, CascadeType.REFRESH})
 	    private Set<Meeting> meetings;
 		
 		public User() {

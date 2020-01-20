@@ -18,39 +18,41 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="Buildings")
+@Document
+//@Entity
+//@Table(name="Buildings")
 public class Building {
 
 	public enum Type { Stadium, Pitch, Training, Medical, Research, Warehouse };
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int building_id;
 	
-	@Column(name="Surface")
+	//@Column(name="Surface")
 	private float surface;
 	
-	@Column(name="Name")
+	//@Column(name="Name")
 	private String name;
 	
-	@Column(name="Address")
+	//@Column(name="Address")
 	private String address;
 	
-	@Column(name="Type")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Type")
+	//@Enumerated(EnumType.STRING)
 	private Type type;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Club")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Club")
 	private Club club;
 	
-	@OneToMany(mappedBy="building",
-    		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-    				CascadeType.DETACH, CascadeType.REFRESH})
+	//@OneToMany(mappedBy="building",
+    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+    //				CascadeType.DETACH, CascadeType.REFRESH})
     private Set<Meeting> meetings;
 	
 	public Building() {

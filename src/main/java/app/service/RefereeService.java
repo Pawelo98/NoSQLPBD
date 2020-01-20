@@ -13,4 +13,7 @@ public interface RefereeService {
 	public Referee getReferee(int theId);
 
 	public void deleteReferee(int theId);
+	
+	public List<Referee> getRefereesMongo();
+	public Referee getRefereeMongo(int theId);
 }
