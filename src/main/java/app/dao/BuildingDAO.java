@@ -13,4 +13,6 @@ public interface BuildingDAO {
 	public Building getBuilding(int theId);
 
 	public void deleteBuilding(int theId);
+
+	void addBuilding(Building building);
 }
