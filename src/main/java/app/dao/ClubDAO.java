@@ -21,4 +21,6 @@ public interface ClubDAO {
 	public List<Long> getClubsHomePoints(int theId);
 	public List<Long> getClubsAwayPoints(int theId);
 	public List<Integer> getPoints(int theId);
+
+	void addClub(Club club);
 }
