@@ -55,6 +55,8 @@ public class User {
 		//@JoinColumn(name="Club")
 		private int club;
 		
+		private List<String> roles;
+		
 		//@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 		//		CascadeType.REFRESH}, fetch = FetchType.EAGER)
 		private Set<Authority> authorities;
@@ -199,5 +201,13 @@ public class User {
 			}
 			invites.add(tempInvite);
 			tempInvite.setWorker(this);
+		}
+
+		public List<String> getRoles() {
+			return roles;
+		}
+
+		public void setRoles(List<String> roles) {
+			this.roles = roles;
 		}
 }

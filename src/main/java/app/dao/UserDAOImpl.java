@@ -56,7 +56,11 @@ public class UserDAOImpl implements UserDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(user);
-		mongoTemplate.save(user);
+		if (!mongoTemplate.collectionExists(User.class)) {
+            mongoTemplate.createCollection(User.class);
+
+        }
+        mongoTemplate.save(user, COLLECTION_NAME);
 	}
 
 	@Override
