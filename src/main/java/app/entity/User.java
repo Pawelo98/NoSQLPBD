@@ -21,12 +21,14 @@ import javax.persistence.TemporalType;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Document
+@Document(collection="users")
 //@Entity
 //@Table(name="Users")
 public class User {
-
+	
 		@Id
+		private String objectId;
+
 		//@Column(name="username")
 		private String username;
 			
@@ -53,7 +55,9 @@ public class User {
 		//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 		//		CascadeType.DETACH, CascadeType.REFRESH})
 		//@JoinColumn(name="Club")
-		private Club club;
+		private int club;
+		
+		private List<String> roles;
 		
 		//@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 		//		CascadeType.REFRESH}, fetch = FetchType.EAGER)
@@ -141,11 +145,11 @@ public class User {
 			this.address = address;
 		}
 
-		public Club getClub() {
+		public int getClub() {
 			return club;
 		}
 
-		public void setClub(Club club) {
+		public void setClub(int club) {
 			this.club = club;
 		}
 
@@ -185,6 +189,13 @@ public class User {
 			authorities.add(tempAuthority);
 		}
 		
+		public void addRole(String role) {
+			if (roles == null) {
+				roles = new ArrayList<>();
+			}
+			roles.add(role);
+		}
+		
 		public void addMeeting(Meeting tempMeeting) {
 			if (meetings == null) {
 				meetings = new HashSet<>();
@@ -201,5 +212,19 @@ public class User {
 			tempInvite.setWorker(this);
 		}
 
-		
+		public List<String> getRoles() {
+			return roles;
+		}
+
+		public void setRoles(List<String> roles) {
+			this.roles = roles;
+		}
+
+		public String getObjectId() {
+			return objectId;
+		}
+
+		public void setObjectId(String objectId) {
+			this.objectId = objectId;
+		}
 }

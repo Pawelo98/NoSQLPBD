@@ -136,7 +136,7 @@
 					<td> ${tempUser.name} </td>
 					<td> ${tempUser.surname} </td>
 					<td> ${tempUser.address} </td>
-					<td> ${tempUser.club.name} </td>
+					<td> ${tempUser.club} </td>
 					<td> <a href="${updateLink}">Zmień</a>
 				</tr>
 			</c:forEach>
