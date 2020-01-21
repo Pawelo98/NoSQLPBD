@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Referee;
@@ -32,14 +34,6 @@ public class RefereeDAOImpl implements RefereeDAO {
 		return mongoTemplate.findAll(Referee.class, COLLECTION_NAME);
 	}
 	
-	@Override
-	public void addReferee(Referee referee) {
-		if (!mongoTemplate.collectionExists(Referee.class)) {
-            mongoTemplate.createCollection(Referee.class);
-
-        }
-        mongoTemplate.insert(referee, COLLECTION_NAME);
-	}
 
 	@Override
 	public void saveReferee(Referee referee) {
@@ -47,16 +41,22 @@ public class RefereeDAOImpl implements RefereeDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(referee);
-		mongoTemplate.save(referee);
+		if (!mongoTemplate.collectionExists(Referee.class)) {
+            mongoTemplate.createCollection(Referee.class);
+
+        }
+        mongoTemplate.save(referee, COLLECTION_NAME);
 	}
+	
 
 	@Override
 	public Referee getReferee(int theId) {
 		
 //		Session session = sessionFactory.getCurrentSession();
 //		Referee referee = session.get(Referee.class, theId);
-		
-		return null;
+		Query query = new Query(Criteria.where("referee_id").is(theId));
+		return mongoTemplate.findOne(query, Referee.class, COLLECTION_NAME);
+//		mongoTemplate.findOne(query(where("Email").is(Email)), User.class,COLLECTION_NAME);
 	}
 
 	@Override

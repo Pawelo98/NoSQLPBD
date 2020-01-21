@@ -6,4 +6,6 @@ import app.entity.League;
 
 public interface LeagueService {
 	public List<League> getLeagues();
+
+	public List<League> getLeaguesMongo();
 }
