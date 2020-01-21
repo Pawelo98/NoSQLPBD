@@ -18,17 +18,19 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "Clubs")
+@Document(collection="clubs")
+//@Entity
+//@Table(name = "Clubs")
 public class Club {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Id")
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(name = "Id")
 	private int club_id;
 
-	@Column(name = "Name")
+	//@Column(name = "Name")
 	private String name;
 
 	public enum Nationality { Afghanistan, Albania, Algeria, AmericanSamoa ("American Samoa"), Andorra, Angola, Anguilla,
@@ -91,36 +93,36 @@ public class Club {
 	    }
     };
 
-	@Column(name = "Nationality")
+	//@Column(name = "Nationality")
 	@Enumerated(EnumType.STRING)
 	private Nationality nationality;
 
-	@Column(name = "Shirt_home")
+	//@Column(name = "Shirt_home")
 	private String shirtHome;
 
-	@Column(name = "Shirt_away")
+	//@Column(name = "Shirt_away")
 	private String shirtAway;
 
-	@OneToMany(mappedBy = "host", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH},fetch = FetchType.EAGER)
+	//@OneToMany(mappedBy = "host", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+	//		CascadeType.REFRESH},fetch = FetchType.EAGER)
 	private Set<Match> hostMatches;
 
 	
-	 @OneToMany(mappedBy="visitor", cascade= {CascadeType.PERSIST,
-	 CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	// @OneToMany(mappedBy="visitor", cascade= {CascadeType.PERSIST,
+	 //CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	 private Set<Match> visitorMatches;
 	 
 
-	@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH})
+	//@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+	//		CascadeType.REFRESH})
 	private Set<Worker> workers;
 
-	@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH})
+	//@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+	//		CascadeType.REFRESH})
 	private Set<User> users;
 
-	@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH})
+	//@OneToMany(mappedBy = "club", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+	//		CascadeType.REFRESH})
 	private Set<Building> buildings;
 
 	public Club() {

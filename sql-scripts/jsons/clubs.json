@@ -1,55 +1,1198 @@
-[{"Id":1, "Name":"Niedersachsen pigs", "Nationality":0, "Shirt_home":"silber", "Shirt_away":"wei\u00df", "Workers":[{"Id":1, "Name":"Viktoria", "Surname":"Sujew", "Earnings":2047.0, "Department":"Masseurs", "Is_player":1, "Is_injured":0, "Shirt_number":4, "Strong_foot":"Right", "Height":187, "Weight":178, "Position":"Midfielder"},
- {"Id":2, "Name":"Angelo", "Surname":"Everts", "Earnings":3246.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":8, "Strong_foot":"Right", "Height":190, "Weight":192, "Position":"Defender"},
- {"Id":3, "Name":"Lee", "Surname":"Holinski", "Earnings":4112.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":18, "Strong_foot":"Right", "Height":171, "Weight":175, "Position":"Defender"},
- {"Id":4, "Name":"Melina", "Surname":"Kohrt", "Earnings":2737.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":1, "Strong_foot":"Right", "Height":188, "Weight":175, "Position":"Goalkeeper"},
- {"Id":5, "Name":"Elly", "Surname":"Feld", "Earnings":5435.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":11, "Strong_foot":"Right", "Height":198, "Weight":193, "Position":"Striker"},
- {"Id":6, "Name":"Samia", "Surname":"Tsamonikian", "Earnings":4544.0, "Department":"Masseurs", "Is_player":1, "Is_injured":0, "Shirt_number":15, "Strong_foot":"Right", "Height":177, "Weight":171, "Position":"Striker"},
- {"Id":7, "Name":"Pia", "Surname":"Birkemeyer", "Earnings":2628.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":19, "Strong_foot":"Right", "Height":198, "Weight":184, "Position":"Defender"},
- {"Id":8, "Name":"Zara", "Surname":"Heberstreit", "Earnings":5477.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":3, "Strong_foot":"Right", "Height":177, "Weight":172, "Position":"Goalkeeper"},
- {"Id":9, "Name":"Josephin", "Surname":"Schorr", "Earnings":3768.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":8, "Strong_foot":"Right", "Height":195, "Weight":194, "Position":"Midfielder"}]},
- {"Id":2, "Name":"Sachsen frogs", "Nationality":0, "Shirt_home":"sand", "Shirt_away":"pink", "Workers":[ {"Id":10, "Name":"Lotte", "Surname":"M\u00f6llenbeck", "Earnings":4415.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":13, "Strong_foot":"Right", "Height":190, "Weight":195, "Position":"Striker"},
- {"Id":11, "Name":"Franziska", "Surname":"Birkemeyer", "Earnings":3021.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":12, "Strong_foot":"Right", "Height":171, "Weight":185, "Position":"Goalkeeper"},
- {"Id":12, "Name":"Kimi", "Surname":"Beckmann", "Earnings":3288.0, "Department":"Greenkeepers", "Is_player":1, "Is_injured":0, "Shirt_number":23, "Strong_foot":"Right", "Height":185, "Weight":175, "Position":"Defender"},
- {"Id":13, "Name":"Aurora", "Surname":"Nau", "Earnings":2127.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":16, "Strong_foot":"Right", "Height":185, "Weight":182, "Position":"Goalkeeper"},
- {"Id":14, "Name":"Ivan", "Surname":"Winter", "Earnings":4091.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":7, "Strong_foot":"Right", "Height":171, "Weight":181, "Position":"Midfielder"},
- {"Id":15, "Name":"Klaas", "Surname":"Laws", "Earnings":5822.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":5, "Strong_foot":"Right", "Height":175, "Weight":192, "Position":"Striker"},
- {"Id":16, "Name":"Joost", "Surname":"Lubina", "Earnings":4042.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":16, "Strong_foot":"Right", "Height":195, "Weight":195, "Position":"Midfielder"}]},
- {"Id":3, "Name":"Saarland wolves", "Nationality":0, "Shirt_home":"blau", "Shirt_away":"schwarz", "Workers": [ {"Id":17, "Name":"Georg", "Surname":"Drews", "Earnings":5467.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":2, "Strong_foot":"Right", "Height":197, "Weight":184, "Position":"Defender"},
- {"Id":18, "Name":"Enno", "Surname":"Plauk", "Earnings":5814.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":1, "Strong_foot":"Right", "Height":191, "Weight":184, "Position":"Goalkeeper"},
- {"Id":19, "Name":"Anny", "Surname":"Alexander", "Earnings":5066.0, "Department":"Cleaners", "Is_player":1, "Is_injured":0, "Shirt_number":12, "Strong_foot":"Right", "Height":174, "Weight":191, "Position":"Midfielder"},
- {"Id":20, "Name":"Mara", "Surname":"Kowalick", "Earnings":4624.0, "Department":"Accountants", "Is_player":1, "Is_injured":0, "Shirt_number":7, "Strong_foot":"Right", "Height":175, "Weight":176, "Position":"Goalkeeper"}]},
- {"Id":4, "Name":"Niedersachsen horses", "Nationality":0, "Shirt_home":"oliv", "Shirt_away":"blau", "Workers":[ {"Id":21, "Name":"Rebekka", "Surname":"Gruning", "Earnings":4602.0, "Department":"Players", "Is_player":1, "Is_injured":0, "Shirt_number":23, "Strong_foot":"Right", "Height":197, "Weight":191, "Position":"Midfielder"},
- {"Id":22, "Name":"Kim", "Surname":"Rhoden", "Earnings":3107.0, "Department":"Masseurs", "Is_player":1, "Is_injured":0, "Shirt_number":12, "Strong_foot":"Right", "Height":177, "Weight":189, "Position":"Striker"},
- {"Id":23, "Name":"Jamie", "Surname":"Nytra", "Earnings":2888.0, "Department":"Greenkeepers", "Is_player":1, "Is_injured":0, "Shirt_number":14, "Strong_foot":"Right", "Height":173, "Weight":193, "Position":"Goalkeeper"},
- {"Id":24, "Name":"Berkay", "Surname":"R\u00f6se", "Earnings":2188.0, "Department":"Masseurs", "Is_player":0, "Is_injured":0, "Shirt_number":0, "Strong_foot":"", "Height":0, "Weight":0, "Position":""},
- {"Id":25, "Name":"Mirco", "Surname":"Linnenbaum", "Earnings":3784.0, "Department":"Players", "Is_player":0, "Is_injured":0, "Shirt_number":0, "Strong_foot":"", "Height":0, "Weight":0, "Position":""}]},
- {"Id":5, "Name":"Berlin pigs", "Nationality":0, "Shirt_home":"silber", "Shirt_away":"lila"},
- {"Id":6, "Name":"Hessen dragons", "Nationality":0, "Shirt_home":"sand", "Shirt_away":"beige"},
- {"Id":7, "Name":"Bayern ants", "Nationality":0, "Shirt_home":"lila", "Shirt_away":"gr\u00fcn"},
- {"Id":8, "Name":"Sachsen ogres", "Nationality":0, "Shirt_home":"limette", "Shirt_away":"azur"},
- {"Id":9, "Name":"Sachsen-Anhalt lions", "Nationality":0, "Shirt_home":"limette", "Shirt_away":"mocka"},
- {"Id":10, "Name":"Bremen bees", "Nationality":0, "Shirt_home":"wei\u00df", "Shirt_away":"wei\u00df"},
- {"Id":11, "Name":"Th\u00fcringen conspirators", "Nationality":0, "Shirt_home":"azur", "Shirt_away":"violett"},
- {"Id":12, "Name":"Baden-W\u00fcrttemberg ogres", "Nationality":0, "Shirt_home":"mint-gr\u00fcn", "Shirt_away":"gold"},
- {"Id":13, "Name":"Th\u00fcringen people", "Nationality":0, "Shirt_home":"gelb", "Shirt_away":"beige"},
- {"Id":14, "Name":"Th\u00fcringen dwarves", "Nationality":0, "Shirt_home":"violett", "Shirt_away":"wei\u00df"},
- {"Id":15, "Name":"Bayern sons", "Nationality":0, "Shirt_home":"gr\u00fcn", "Shirt_away":"gelb"},
- {"Id":16, "Name":"Hamburg ogres", "Nationality":0, "Shirt_home":"sand", "Shirt_away":"gelb"},
- {"Id":17, "Name":"Rheinland-Pfalz bees", "Nationality":0, "Shirt_home":"mocka", "Shirt_away":"grau"},
- {"Id":18, "Name":"Brandenburg lions", "Nationality":0, "Shirt_home":"lila", "Shirt_away":"ocker"},
- {"Id":19, "Name":"Mazowieckie prophets", "Nationality":0, "Shirt_home":"lime", "Shirt_away":"indigo"},
- {"Id":20, "Name":"\u0141\u00f3dzkie cats", "Nationality":0, "Shirt_home":"sky blue", "Shirt_away":"mint green"},
- {"Id":21, "Name":"Warmi\u0144sko-mazurskie elephants", "Nationality":0, "Shirt_home":"turquoise", "Shirt_away":"plum"},
- {"Id":22, "Name":"Podkarpackie werewolves", "Nationality":0, "Shirt_home":"mint green", "Shirt_away":"olive"},
- {"Id":23, "Name":"Mazowieckie buffalo", "Nationality":0, "Shirt_home":"pink", "Shirt_away":"orchid"},
- {"Id":24, "Name":"Opolskie worshipers", "Nationality":0, "Shirt_home":"magenta", "Shirt_away":"orchid"},
- {"Id":25, "Name":"Lubelskie penguins", "Nationality":0, "Shirt_home":"grey", "Shirt_away":"purple"},
- {"Id":26, "Name":"Podlaskie frogs", "Nationality":0, "Shirt_home":"plum", "Shirt_away":"black"},
- {"Id":27, "Name":"\u0141\u00f3dzkie dogs", "Nationality":0, "Shirt_home":"tan", "Shirt_away":"ivory"},
- {"Id":28, "Name":"Dolno\u015bl\u0105skie prophets", "Nationality":0, "Shirt_home":"teal", "Shirt_away":"grey"},
- {"Id":29, "Name":"Mazowieckie ogres", "Nationality":0, "Shirt_home":"grey", "Shirt_away":"teal"},
- {"Id":30, "Name":"Warmi\u0144sko-mazurskie witches", "Nationality":0, "Shirt_home":"green", "Shirt_away":"silver"},
- {"Id":31, "Name":"Zachodniopomorskie dwarves", "Nationality":0, "Shirt_home":"salmon", "Shirt_away":"magenta"},
- {"Id":32, "Name":"\u0141\u00f3dzkie lycanthropes", "Nationality":0, "Shirt_home":"turquoise", "Shirt_away":"mint green"},
- {"Id":33, "Name":"\u0141\u00f3dzkie bees", "Nationality":0, "Shirt_home":"white", "Shirt_away":"cyan"},
- {"Id":34, "Name":"Dolno\u015bl\u0105skie vixens", "Nationality":0, "Shirt_home":"olive", "Shirt_away":"red"}]
+<<<<<<< HEAD
+[
+  {
+    "club_id": 1,
+    "name": "Niedersachsen pigs",
+    "nationality": "Poland",
+    "shirtHome": "silber",
+    "shirtAway": "wei\u00df",
+    "workers": [
+      {
+        "worker_id": 1,
+        "name": "Viktoria",
+        "surname": "Sujew",
+        "earnings": 2047.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 4,
+        "strongFoot": "Right",
+        "height": 187,
+        "weight": 178,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 2,
+        "name": "Angelo",
+        "surname": "Everts",
+        "earnings": 3246.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 8,
+        "strongFoot": "Right",
+        "height": 190,
+        "weight": 192,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 3,
+        "name": "Lee",
+        "surname": "Holinski",
+        "earnings": 4112.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 18,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 175,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 4,
+        "name": "Melina",
+        "surname": "Kohrt",
+        "earnings": 2737.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 1,
+        "strongFoot": "Right",
+        "height": 188,
+        "weight": 175,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 5,
+        "name": "Elly",
+        "surname": "Feld",
+        "earnings": 5435.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 11,
+        "strongFoot": "Right",
+        "height": 198,
+        "weight": 193,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 6,
+        "name": "Samia",
+        "surname": "Tsamonikian",
+        "earnings": 4544.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 15,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 171,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 7,
+        "name": "Pia",
+        "surname": "Birkemeyer",
+        "earnings": 2628.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 19,
+        "strongFoot": "Right",
+        "height": 198,
+        "weight": 184,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 8,
+        "name": "Zara",
+        "surname": "Heberstreit",
+        "earnings": 5477.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 3,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 172,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 9,
+        "name": "Josephin",
+        "surname": "Schorr",
+        "earnings": 3768.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 8,
+        "strongFoot": "Right",
+        "height": 195,
+        "weight": 194,
+        "position": "Midfielder"
+      }
+    ]
+  },
+  {
+    "club_id": 2,
+    "name": "Sachsen frogs",
+    "nationality": 0,
+    "shirtHome": "sand",
+    "shirtAway": "pink",
+    "workers": [
+      {
+        "worker_id": 10,
+        "name": "Lotte",
+        "surname": "M\u00f6llenbeck",
+        "earnings": 4415.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 13,
+        "strongFoot": "Right",
+        "height": 190,
+        "weight": 195,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 11,
+        "name": "Franziska",
+        "surname": "Birkemeyer",
+        "earnings": 3021.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 185,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 12,
+        "name": "Kimi",
+        "surname": "Beckmann",
+        "earnings": 3288.0,
+        "department": "Greenkeepers",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 23,
+        "strongFoot": "Right",
+        "height": 185,
+        "weight": 175,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 13,
+        "name": "Aurora",
+        "surname": "Nau",
+        "earnings": 2127.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 16,
+        "strongFoot": "Right",
+        "height": 185,
+        "weight": 182,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 14,
+        "name": "Ivan",
+        "surname": "Winter",
+        "earnings": 4091.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 7,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 181,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 15,
+        "name": "Klaas",
+        "surname": "Laws",
+        "earnings": 5822.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 5,
+        "strongFoot": "Right",
+        "height": 175,
+        "weight": 192,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 16,
+        "name": "Joost",
+        "surname": "Lubina",
+        "earnings": 4042.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 16,
+        "strongFoot": "Right",
+        "height": 195,
+        "weight": 195,
+        "position": "Midfielder"
+      }
+    ]
+  },
+  {
+    "club_id": 3,
+    "name": "Saarland wolves",
+    "nationality": "Poland",
+    "shirtHome": "blau",
+    "shirtAway": "schwarz",
+    "workers": [
+      {
+        "worker_id": 17,
+        "name": "Georg",
+        "surname": "Drews",
+        "earnings": 5467.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 2,
+        "strongFoot": "Right",
+        "height": 197,
+        "weight": 184,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 18,
+        "name": "Enno",
+        "surname": "Plauk",
+        "earnings": 5814.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 1,
+        "strongFoot": "Right",
+        "height": 191,
+        "weight": 184,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 19,
+        "name": "Anny",
+        "surname": "Alexander",
+        "earnings": 5066.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 174,
+        "weight": 191,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 20,
+        "name": "Mara",
+        "surname": "Kowalick",
+        "earnings": 4624.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 7,
+        "strongFoot": "Right",
+        "height": 175,
+        "weight": 176,
+        "position": "Goalkeeper"
+      }
+    ]
+  },
+  {
+    "club_id": 4,
+    "name": "Niedersachsen horses",
+    "nationality": "Poland",
+    "shirtHome": "oliv",
+    "shirtAway": "blau",
+    "workers": [
+      {
+        "worker_id": 21,
+        "name": "Rebekka",
+        "surname": "Gruning",
+        "earnings": 4602.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 23,
+        "strongFoot": "Right",
+        "height": 197,
+        "weight": 191,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 22,
+        "name": "Kim",
+        "surname": "Rhoden",
+        "earnings": 3107.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 189,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 23,
+        "name": "Jamie",
+        "surname": "Nytra",
+        "earnings": 2888.0,
+        "department": "Greenkeepers",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 14,
+        "strongFoot": "Right",
+        "height": 173,
+        "weight": 193,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 24,
+        "name": "Berkay",
+        "surname": "R\u00f6se",
+        "earnings": 2188.0,
+        "department": "Masseurs",
+        "IsPlayer": 0,
+        "IsInjured": 0,
+        "shirtNumber": 0,
+        "strongFoot": "",
+        "height": 0,
+        "weight": 0,
+        "position": ""
+      },
+      {
+        "worker_id": 25,
+        "name": "Mirco",
+        "surname": "Linnenbaum",
+        "earnings": 3784.0,
+        "department": "Players",
+        "IsPlayer": 0,
+        "IsInjured": 0,
+        "shirtNumber": 0,
+        "strongFoot": "",
+        "height": 0,
+        "weight": 0,
+        "position": ""
+      }
+    ]
+  },
+  {
+    "club_id": 5,
+    "name": "Berlin pigs",
+    "nationality": "Poland",
+    "shirtHome": "silber",
+    "shirtAway": "lila"
+  },
+  {
+    "club_id": 6,
+    "name": "Hessen dragons",
+    "nationality": "Poland",
+    "shirtHome": "sand",
+    "shirtAway": "beige"
+  },
+  {
+    "club_id": 7,
+    "name": "Bayern ants",
+    "nationality": "Poland",
+    "shirtHome": "lila",
+    "shirtAway": "gr\u00fcn"
+  },
+  {
+    "club_id": 8,
+    "name": "Sachsen ogres",
+    "nationality": "Poland",
+    "shirtHome": "limette",
+    "shirtAway": "azur"
+  },
+  {
+    "club_id": 9,
+    "name": "Sachsen-Anhalt lions",
+    "nationality": "Poland",
+    "shirtHome": "limette",
+    "shirtAway": "mocka"
+  },
+  {
+    "club_id": 10,
+    "name": "Bremen bees",
+    "nationality": "Poland",
+    "shirtHome": "wei\u00df",
+    "shirtAway": "wei\u00df"
+  },
+  {
+    "club_id": 11,
+    "name": "Th\u00fcringen conspirators",
+    "nationality": "Poland",
+    "shirtHome": "azur",
+    "shirtAway": "violett"
+  },
+  {
+    "club_id": 12,
+    "name": "Baden-W\u00fcrttemberg ogres",
+    "nationality": "Poland",
+    "shirtHome": "mint-gr\u00fcn",
+    "shirtAway": "gold"
+  },
+  {
+    "club_id": 13,
+    "name": "Th\u00fcringen people",
+    "nationality": "Poland",
+    "shirtHome": "gelb",
+    "shirtAway": "beige"
+  },
+  {
+    "club_id": 14,
+    "name": "Th\u00fcringen dwarves",
+    "nationality": "Poland",
+    "shirtHome": "violett",
+    "shirtAway": "wei\u00df"
+  },
+  {
+    "club_id": 15,
+    "name": "Bayern sons",
+    "nationality": "Poland",
+    "shirtHome": "gr\u00fcn",
+    "shirtAway": "gelb"
+  },
+  {
+    "club_id": 16,
+    "name": "Hamburg ogres",
+    "nationality": "Poland",
+    "shirtHome": "sand",
+    "shirtAway": "gelb"
+  },
+  {
+    "club_id": 17,
+    "name": "Rheinland-Pfalz bees",
+    "nationality": "Poland",
+    "shirtHome": "mocka",
+    "shirtAway": "grau"
+  },
+  {
+    "club_id": 18,
+    "name": "Brandenburg lions",
+    "nationality": "Poland",
+    "shirtHome": "lila",
+    "shirtAway": "ocker"
+  },
+  {
+    "club_id": 19,
+    "name": "Mazowieckie prophets",
+    "nationality": "Poland",
+    "shirtHome": "lime",
+    "shirtAway": "indigo"
+  },
+  {
+    "club_id": 20,
+    "name": "\u0141\u00f3dzkie cats",
+    "nationality": "Poland",
+    "shirtHome": "sky blue",
+    "shirtAway": "mint green"
+  },
+  {
+    "club_id": 21,
+    "name": "Warmi\u0144sko-mazurskie elephants",
+    "nationality": "Poland",
+    "shirtHome": "turquoise",
+    "shirtAway": "plum"
+  },
+  {
+    "club_id": 22,
+    "name": "Podkarpackie werewolves",
+    "nationality": "Croatia",
+    "shirtHome": "mint green",
+    "shirtAway": "olive"
+  },
+  {
+    "club_id": 23,
+    "name": "Mazowieckie buffalo",
+    "nationality": "Croatia",
+    "shirtHome": "pink",
+    "shirtAway": "orchid"
+  },
+  {
+    "club_id": 24,
+    "name": "Opolskie worshipers",
+    "nationality": "Croatia",
+    "shirtHome": "magenta",
+    "shirtAway": "orchid"
+  },
+  {
+    "club_id": 25,
+    "name": "Lubelskie penguins",
+    "nationality": "Croatia",
+    "shirtHome": "grey",
+    "shirtAway": "purple"
+  },
+  {
+    "club_id": 26,
+    "name": "Podlaskie frogs",
+    "nationality": "Croatia",
+    "shirtHome": "plum",
+    "shirtAway": "black"
+  },
+  {
+    "club_id": 27,
+    "name": "\u0141\u00f3dzkie dogs",
+    "nationality": "Croatia",
+    "shirtHome": "tan",
+    "shirtAway": "ivory"
+  },
+  {
+    "club_id": 28,
+    "name": "Dolno\u015bl\u0105skie prophets",
+    "nationality": "Croatia",
+    "shirtHome": "teal",
+    "shirtAway": "grey"
+  },
+  {
+    "club_id": 29,
+    "name": "Mazowieckie ogres",
+    "nationality": "Croatia",
+    "shirtHome": "grey",
+    "shirtAway": "teal"
+  },
+  {
+    "club_id": 30,
+    "name": "Warmi\u0144sko-mazurskie witches",
+    "nationality": "Croatia",
+    "shirtHome": "green",
+    "shirtAway": "silver"
+  },
+  {
+    "club_id": 31,
+    "name": "Zachodniopomorskie dwarves",
+    "nationality": "Croatia",
+    "shirtHome": "salmon",
+    "shirtAway": "magenta"
+  },
+  {
+    "club_id": 32,
+    "name": "\u0141\u00f3dzkie lycanthropes",
+    "nationality": "Croatia",
+    "shirtHome": "turquoise",
+    "shirtAway": "mint green"
+  },
+  {
+    "club_id": 33,
+    "name": "\u0141\u00f3dzkie bees",
+    "nationality": "Croatia",
+    "shirtHome": "white",
+    "shirtAway": "cyan"
+  },
+  {
+    "club_id": 34,
+    "name": "Dolno\u015bl\u0105skie vixens",
+    "nationality": "Croatia",
+    "shirtHome": "olive",
+    "shirtAway": "red"
+  }
+=======
+[
+  {
+    "club_id": 1,
+    "name": "Niedersachsen pigs",
+    "nationality": "Poland",
+    "shirtHome": "silber",
+    "shirtAway": "wei\u00df",
+    "workers": [
+      {
+        "worker_id": 1,
+        "name": "Viktoria",
+        "surname": "Sujew",
+        "earnings": 2047.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 4,
+        "strongFoot": "Right",
+        "height": 187,
+        "weight": 178,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 2,
+        "name": "Angelo",
+        "surname": "Everts",
+        "earnings": 3246.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 8,
+        "strongFoot": "Right",
+        "height": 190,
+        "weight": 192,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 3,
+        "name": "Lee",
+        "surname": "Holinski",
+        "earnings": 4112.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 18,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 175,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 4,
+        "name": "Melina",
+        "surname": "Kohrt",
+        "earnings": 2737.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 1,
+        "strongFoot": "Right",
+        "height": 188,
+        "weight": 175,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 5,
+        "name": "Elly",
+        "surname": "Feld",
+        "earnings": 5435.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 11,
+        "strongFoot": "Right",
+        "height": 198,
+        "weight": 193,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 6,
+        "name": "Samia",
+        "surname": "Tsamonikian",
+        "earnings": 4544.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 15,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 171,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 7,
+        "name": "Pia",
+        "surname": "Birkemeyer",
+        "earnings": 2628.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 19,
+        "strongFoot": "Right",
+        "height": 198,
+        "weight": 184,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 8,
+        "name": "Zara",
+        "surname": "Heberstreit",
+        "earnings": 5477.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 3,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 172,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 9,
+        "name": "Josephin",
+        "surname": "Schorr",
+        "earnings": 3768.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 8,
+        "strongFoot": "Right",
+        "height": 195,
+        "weight": 194,
+        "position": "Midfielder"
+      }
+    ]
+  },
+  {
+    "club_id": 2,
+    "name": "Sachsen frogs",
+    "nationality": 0,
+    "shirtHome": "sand",
+    "shirtAway": "pink",
+    "workers": [
+      {
+        "worker_id": 10,
+        "name": "Lotte",
+        "surname": "M\u00f6llenbeck",
+        "earnings": 4415.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 13,
+        "strongFoot": "Right",
+        "height": 190,
+        "weight": 195,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 11,
+        "name": "Franziska",
+        "surname": "Birkemeyer",
+        "earnings": 3021.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 185,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 12,
+        "name": "Kimi",
+        "surname": "Beckmann",
+        "earnings": 3288.0,
+        "department": "Greenkeepers",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 23,
+        "strongFoot": "Right",
+        "height": 185,
+        "weight": 175,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 13,
+        "name": "Aurora",
+        "surname": "Nau",
+        "earnings": 2127.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 16,
+        "strongFoot": "Right",
+        "height": 185,
+        "weight": 182,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 14,
+        "name": "Ivan",
+        "surname": "Winter",
+        "earnings": 4091.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 7,
+        "strongFoot": "Right",
+        "height": 171,
+        "weight": 181,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 15,
+        "name": "Klaas",
+        "surname": "Laws",
+        "earnings": 5822.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 5,
+        "strongFoot": "Right",
+        "height": 175,
+        "weight": 192,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 16,
+        "name": "Joost",
+        "surname": "Lubina",
+        "earnings": 4042.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 16,
+        "strongFoot": "Right",
+        "height": 195,
+        "weight": 195,
+        "position": "Midfielder"
+      }
+    ]
+  },
+  {
+    "club_id": 3,
+    "name": "Saarland wolves",
+    "nationality": "Poland",
+    "shirtHome": "blau",
+    "shirtAway": "schwarz",
+    "workers": [
+      {
+        "worker_id": 17,
+        "name": "Georg",
+        "surname": "Drews",
+        "earnings": 5467.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 2,
+        "strongFoot": "Right",
+        "height": 197,
+        "weight": 184,
+        "position": "Defender"
+      },
+      {
+        "worker_id": 18,
+        "name": "Enno",
+        "surname": "Plauk",
+        "earnings": 5814.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 1,
+        "strongFoot": "Right",
+        "height": 191,
+        "weight": 184,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 19,
+        "name": "Anny",
+        "surname": "Alexander",
+        "earnings": 5066.0,
+        "department": "Cleaners",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 174,
+        "weight": 191,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 20,
+        "name": "Mara",
+        "surname": "Kowalick",
+        "earnings": 4624.0,
+        "department": "Accountants",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 7,
+        "strongFoot": "Right",
+        "height": 175,
+        "weight": 176,
+        "position": "Goalkeeper"
+      }
+    ]
+  },
+  {
+    "club_id": 4,
+    "name": "Niedersachsen horses",
+    "nationality": "Poland",
+    "shirtHome": "oliv",
+    "shirtAway": "blau",
+    "workers": [
+      {
+        "worker_id": 21,
+        "name": "Rebekka",
+        "surname": "Gruning",
+        "earnings": 4602.0,
+        "department": "Players",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 23,
+        "strongFoot": "Right",
+        "height": 197,
+        "weight": 191,
+        "position": "Midfielder"
+      },
+      {
+        "worker_id": 22,
+        "name": "Kim",
+        "surname": "Rhoden",
+        "earnings": 3107.0,
+        "department": "Masseurs",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 12,
+        "strongFoot": "Right",
+        "height": 177,
+        "weight": 189,
+        "position": "Striker"
+      },
+      {
+        "worker_id": 23,
+        "name": "Jamie",
+        "surname": "Nytra",
+        "earnings": 2888.0,
+        "department": "Greenkeepers",
+        "IsPlayer": 1,
+        "IsInjured": 0,
+        "shirtNumber": 14,
+        "strongFoot": "Right",
+        "height": 173,
+        "weight": 193,
+        "position": "Goalkeeper"
+      },
+      {
+        "worker_id": 24,
+        "name": "Berkay",
+        "surname": "R\u00f6se",
+        "earnings": 2188.0,
+        "department": "Masseurs",
+        "IsPlayer": 0,
+        "IsInjured": 0,
+        "shirtNumber": 0,
+        "strongFoot": "",
+        "height": 0,
+        "weight": 0,
+        "position": ""
+      },
+      {
+        "worker_id": 25,
+        "name": "Mirco",
+        "surname": "Linnenbaum",
+        "earnings": 3784.0,
+        "department": "Players",
+        "IsPlayer": 0,
+        "IsInjured": 0,
+        "shirtNumber": 0,
+        "strongFoot": "",
+        "height": 0,
+        "weight": 0,
+        "position": ""
+      }
+    ]
+  },
+  {
+    "club_id": 5,
+    "name": "Berlin pigs",
+    "nationality": "Poland",
+    "shirtHome": "silber",
+    "shirtAway": "lila"
+  },
+  {
+    "club_id": 6,
+    "name": "Hessen dragons",
+    "nationality": "Poland",
+    "shirtHome": "sand",
+    "shirtAway": "beige"
+  },
+  {
+    "club_id": 7,
+    "name": "Bayern ants",
+    "nationality": "Poland",
+    "shirtHome": "lila",
+    "shirtAway": "gr\u00fcn"
+  },
+  {
+    "club_id": 8,
+    "name": "Sachsen ogres",
+    "nationality": "Poland",
+    "shirtHome": "limette",
+    "shirtAway": "azur"
+  },
+  {
+    "club_id": 9,
+    "name": "Sachsen-Anhalt lions",
+    "nationality": "Poland",
+    "shirtHome": "limette",
+    "shirtAway": "mocka"
+  },
+  {
+    "club_id": 10,
+    "name": "Bremen bees",
+    "nationality": "Poland",
+    "shirtHome": "wei\u00df",
+    "shirtAway": "wei\u00df"
+  },
+  {
+    "club_id": 11,
+    "name": "Th\u00fcringen conspirators",
+    "nationality": "Poland",
+    "shirtHome": "azur",
+    "shirtAway": "violett"
+  },
+  {
+    "club_id": 12,
+    "name": "Baden-W\u00fcrttemberg ogres",
+    "nationality": "Poland",
+    "shirtHome": "mint-gr\u00fcn",
+    "shirtAway": "gold"
+  },
+  {
+    "club_id": 13,
+    "name": "Th\u00fcringen people",
+    "nationality": "Poland",
+    "shirtHome": "gelb",
+    "shirtAway": "beige"
+  },
+  {
+    "club_id": 14,
+    "name": "Th\u00fcringen dwarves",
+    "nationality": "Poland",
+    "shirtHome": "violett",
+    "shirtAway": "wei\u00df"
+  },
+  {
+    "club_id": 15,
+    "name": "Bayern sons",
+    "nationality": "Poland",
+    "shirtHome": "gr\u00fcn",
+    "shirtAway": "gelb"
+  },
+  {
+    "club_id": 16,
+    "name": "Hamburg ogres",
+    "nationality": "Poland",
+    "shirtHome": "sand",
+    "shirtAway": "gelb"
+  },
+  {
+    "club_id": 17,
+    "name": "Rheinland-Pfalz bees",
+    "nationality": "Poland",
+    "shirtHome": "mocka",
+    "shirtAway": "grau"
+  },
+  {
+    "club_id": 18,
+    "name": "Brandenburg lions",
+    "nationality": "Poland",
+    "shirtHome": "lila",
+    "shirtAway": "ocker"
+  },
+  {
+    "club_id": 19,
+    "name": "Mazowieckie prophets",
+    "nationality": "Poland",
+    "shirtHome": "lime",
+    "shirtAway": "indigo"
+  },
+  {
+    "club_id": 20,
+    "name": "\u0141\u00f3dzkie cats",
+    "nationality": "Poland",
+    "shirtHome": "sky blue",
+    "shirtAway": "mint green"
+  },
+  {
+    "club_id": 21,
+    "name": "Warmi\u0144sko-mazurskie elephants",
+    "nationality": "Poland",
+    "shirtHome": "turquoise",
+    "shirtAway": "plum"
+  },
+  {
+    "club_id": 22,
+    "name": "Podkarpackie werewolves",
+    "nationality": "Croatia",
+    "shirtHome": "mint green",
+    "shirtAway": "olive"
+  },
+  {
+    "club_id": 23,
+    "name": "Mazowieckie buffalo",
+    "nationality": "Croatia",
+    "shirtHome": "pink",
+    "shirtAway": "orchid"
+  },
+  {
+    "club_id": 24,
+    "name": "Opolskie worshipers",
+    "nationality": "Croatia",
+    "shirtHome": "magenta",
+    "shirtAway": "orchid"
+  },
+  {
+    "club_id": 25,
+    "name": "Lubelskie penguins",
+    "nationality": "Croatia",
+    "shirtHome": "grey",
+    "shirtAway": "purple"
+  },
+  {
+    "club_id": 26,
+    "name": "Podlaskie frogs",
+    "nationality": "Croatia",
+    "shirtHome": "plum",
+    "shirtAway": "black"
+  },
+  {
+    "club_id": 27,
+    "name": "\u0141\u00f3dzkie dogs",
+    "nationality": "Croatia",
+    "shirtHome": "tan",
+    "shirtAway": "ivory"
+  },
+  {
+    "club_id": 28,
+    "name": "Dolno\u015bl\u0105skie prophets",
+    "nationality": "Croatia",
+    "shirtHome": "teal",
+    "shirtAway": "grey"
+  },
+  {
+    "club_id": 29,
+    "name": "Mazowieckie ogres",
+    "nationality": "Croatia",
+    "shirtHome": "grey",
+    "shirtAway": "teal"
+  },
+  {
+    "club_id": 30,
+    "name": "Warmi\u0144sko-mazurskie witches",
+    "nationality": "Croatia",
+    "shirtHome": "green",
+    "shirtAway": "silver"
+  },
+  {
+    "club_id": 31,
+    "name": "Zachodniopomorskie dwarves",
+    "nationality": "Croatia",
+    "shirtHome": "salmon",
+    "shirtAway": "magenta"
+  },
+  {
+    "club_id": 32,
+    "name": "\u0141\u00f3dzkie lycanthropes",
+    "nationality": "Croatia",
+    "shirtHome": "turquoise",
+    "shirtAway": "mint green"
+  },
+  {
+    "club_id": 33,
+    "name": "\u0141\u00f3dzkie bees",
+    "nationality": "Croatia",
+    "shirtHome": "white",
+    "shirtAway": "cyan"
+  },
+  {
+    "club_id": 34,
+    "name": "Dolno\u015bl\u0105skie vixens",
+    "nationality": "Croatia",
+    "shirtHome": "olive",
+    "shirtAway": "red"
+  }
+>>>>>>> 3b37584b3952ef7c47e439edeee5dd0eec3951ea
+]
