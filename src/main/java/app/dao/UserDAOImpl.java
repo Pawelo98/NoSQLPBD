@@ -5,10 +5,11 @@ import java.util.UUID;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.BasicQuery;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.BasicDBObject;
@@ -68,7 +69,10 @@ public class UserDAOImpl implements UserDAO {
 //		return user;
 		//BasicQuery query = (BasicQuery) new BasicQuery("{'username': 'admin' }").limit(1);
 		
-		User user = mongoTemplate.findById(username, User.class);
+		Query query = new Query(Criteria.where("username").is(username));
+		
+		User user = mongoTemplate.findOne(query, User.class, "users");
+		
 		return user;
 	}
 
@@ -81,7 +85,7 @@ public class UserDAOImpl implements UserDAO {
 //		query.setParameter("usernameFromView", username);
 //		
 //		query.executeUpdate();
-		User user = mongoTemplate.findById(username, User.class);
+		User user = this.getUser(username);
 		mongoTemplate.remove(user, COLLECTION_NAME);
 	}
 

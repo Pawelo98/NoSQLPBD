@@ -105,7 +105,7 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		
 		model.addAttribute("buildings", buildings);
 		
