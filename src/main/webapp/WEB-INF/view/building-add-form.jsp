@@ -140,7 +140,7 @@
 
 
 					</tr>
-					<tr>
+					<%--  tr>
 						<td><label>Klub:</label></td>
 						<td><form:select path="club.club_id">
 								
@@ -149,7 +149,7 @@
 								</c:forEach>
 
 							</form:select></td>
-					</tr>
+					</tr--%>
 
 					<tr>
 						<td><label></label></td>

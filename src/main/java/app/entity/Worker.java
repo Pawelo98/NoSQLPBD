@@ -68,7 +68,7 @@ public class Worker {
 	
 	//@Column(name="Position")
 	//@Enumerated(EnumType.STRING)
-//	private Position position;
+	private String position;
 	
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
@@ -96,6 +96,7 @@ public class Worker {
 		this.height = height;
 		this.weight = weight;
 //		this.position = Position.valueOf(position);
+		this.position = position;
 	}
 
 	public Worker(String name, String surname, float earnings, String department) {
@@ -201,6 +202,14 @@ public class Worker {
 //	public void setPosition(Position position) {
 //		this.position = position;
 //	}
+	
+	public String getPosition() {
+	return position;
+}
+
+public void setPosition(String position) {
+	this.position = position;
+}
 	
 
 	public Club getClub() {

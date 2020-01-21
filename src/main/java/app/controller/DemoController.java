@@ -137,6 +137,7 @@ public class DemoController {
 	public String listLeagues(Model model)
 	{
 		List<League> league = leagueService.getLeagues();
+		//List<League> league = leagueService.getLeaguesMongo();
 		model.addAttribute("league", league);
 		
 		List<Club> club = clubService.getClubs();
@@ -261,9 +262,10 @@ public class DemoController {
 	}
 	
 	@PostMapping("/saveReferee")
-	public String saveReferee(@ModelAttribute("referee") Referee referee){
+	public String saveReferee(@ModelAttribute("refereeId") Referee referee){
 
 		refereeService.saveReferee(referee);
+		
 	return "redirect:/referees";
 	}
 	
