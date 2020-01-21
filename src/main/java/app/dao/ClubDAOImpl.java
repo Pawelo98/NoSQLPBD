@@ -5,9 +5,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import app.entity.Building;
 import app.entity.Club;
@@ -156,6 +158,13 @@ public class ClubDAOImpl implements ClubDAO {
 		//List<Club> clubs = query.getResultList();
 		
 		return null;
+	}
+
+	@Override
+	public Club getClub(int theId) {
+		// TODO Auto-generated method stub
+		 Query quer = new Query(Criteria.where("club_id").is(theId));
+		return mongoTemplate.findOne(quer, Club.class,"clubs");
 	}
 
 }

@@ -253,18 +253,18 @@ public class UserController {
 			
 			// dodawanie budynk�w klubowych
 			
-			for(int h=0; h<5; h++) {
-				String nameBuilding = faker.company().name();
-				String addressBuilding = faker.address().fullAddress();
-				float surface = 200 + generator.nextInt(2000);
-				String[] types = {"Pitch", "Training", "Medical", "Research", "Warehouse"};
-				String type = types[generator.nextInt(types.length)];
-				if(h==0)
-					type = "Stadium";
-				Building building = new Building(surface, nameBuilding, addressBuilding, type);
-				building.setClub(club);
-				buildingService.saveBuilding(building);
-			}
+//			for(int h=0; h<5; h++) {
+//				String nameBuilding = faker.company().name();
+//				String addressBuilding = faker.address().fullAddress();
+//				float surface = 200 + generator.nextInt(2000);
+//				String[] types = {"Pitch", "Training", "Medical", "Research", "Warehouse"};
+//				String type = types[generator.nextInt(types.length)];
+//				if(h==0)
+//					type = "Stadium";
+//				Building building = new Building(surface, nameBuilding, addressBuilding, type);
+//				building.setClub(club);
+//				buildingService.saveBuilding(building);
+//			}
 		}
 		return "redirect:/user/list";
 	}
