@@ -18,59 +18,61 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="Workers")
+//@Document(collection="clubs")
+//@Entity
+//@Table(name="Workers")
 public class Worker {
 
 	public enum Department { Greenkeepers, Accountants, Masseurs, Cleaners, Players };
-	public enum StrongFoot { Left, Right, Both };
-	public enum Position { Goalkeeper, Defender, Midfielder, Striker };
+//	public enum StrongFoot { Left, Right, Both };
+//	public enum Position { Goalkeeper, Defender, Midfielder, Striker };
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int worker_id;
 	
-	@Column(name="Name")
+	//@Column(name="Name")
 	private String name;
 	
-	@Column(name="Surname")
+	//@Column(name="Surname")
 	private String surname;
 	
-	@Column(name="Earnings")
+	//@Column(name="Earnings")
 	private float earnings;
 	
-	@Column(name="Department")
-	@Enumerated(EnumType.STRING)
+	//@Column(name="Department")
+	//@Enumerated(EnumType.STRING)
 	private Department department;
 	
-	@Column(name="Is_player")
+	//@Column(name="Is_player")
 	private boolean isPlayer;
 	
-	@Column(name="Is_injured")
+	//@Column(name="Is_injured")
 	private boolean isInjured;
 	
-	@Column(name="Shirt_number")
+	//@Column(name="Shirt_number")
 	private int shirtNumber;
 	
-	@Column(name="Strong_foot")
-	@Enumerated(EnumType.STRING)
-	private StrongFoot strongFoot;
+	//@Column(name="Strong_foot")
+	//@Enumerated(EnumType.STRING)
+//	private StrongFoot strongFoot;
 	
-	@Column(name="Height")
+	//@Column(name="Height")
 	private int height;
 	
-	@Column(name="Weight")
+	//@Column(name="Weight")
 	private int weight;
 	
-	@Column(name="Position")
-	@Enumerated(EnumType.STRING)
-	private Position position;
+	//@Column(name="Position")
+	//@Enumerated(EnumType.STRING)
+//	private Position position;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Club")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Club")
 	private Club club;
 	
 //	@Column(name="club")
@@ -90,10 +92,10 @@ public class Worker {
 		this.isPlayer = isPlayer;
 		this.isInjured = isInjured;
 		this.shirtNumber = shirtNumber;
-		this.strongFoot = StrongFoot.valueOf(strongFoot);
+//		this.strongFoot = StrongFoot.valueOf(strongFoot);
 		this.height = height;
 		this.weight = weight;
-		this.position = Position.valueOf(position);
+//		this.position = Position.valueOf(position);
 	}
 
 	public Worker(String name, String surname, float earnings, String department) {
@@ -168,13 +170,13 @@ public class Worker {
 		this.shirtNumber = shirtNumber;
 	}
 
-	public StrongFoot getStrongFoot() {
-		return strongFoot;
-	}
-
-	public void setStrongFoot(StrongFoot strongFoot) {
-		this.strongFoot = strongFoot;
-	}
+//	public StrongFoot getStrongFoot() {
+//		return strongFoot;
+//	}
+//
+//	public void setStrongFoot(StrongFoot strongFoot) {
+//		this.strongFoot = strongFoot;
+//	}
 
 	public int getHeight() {
 		return height;
@@ -192,13 +194,13 @@ public class Worker {
 		this.weight = weight;
 	}
 
-	public Position getPosition() {
-		return position;
-	}
-
-	public void setPosition(Position position) {
-		this.position = position;
-	}
+//	public Position getPosition() {
+//		return position;
+//	}
+//
+//	public void setPosition(Position position) {
+//		this.position = position;
+//	}
 	
 
 	public Club getClub() {
@@ -213,7 +215,7 @@ public class Worker {
 	public String toString() {
 		return "Worker [worker_id=" + worker_id + ", name=" + name + ", surname=" + surname + ", earnings=" + earnings
 				+ ", department=" + department + ", isPlayer=" + isPlayer + ", isInjured=" + isInjured
-				+ ", shirtNumber=" + shirtNumber + ", strongFoot=" + strongFoot + ", height=" + height + ", weight="
-				+ weight + ", position=" + position+"]";
+				+ ", shirtNumber=" + shirtNumber + ", strongFoot= Right"  + ", height=" + height + ", weight="
+				+ weight + ", position= Defender" +"]";
 	}
 }

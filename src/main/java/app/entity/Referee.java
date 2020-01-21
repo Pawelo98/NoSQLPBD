@@ -16,10 +16,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="Referees")
 
+@Document(collection="referees")
 public class Referee {
 
 //	public enum Nationality { Afghanistan, Albania, Algeria, AmericanSamoa ("American Samoa"), Andorra, Angola, Anguilla,
@@ -82,6 +82,8 @@ public class Referee {
 //	    }
 //    };
 	
+	public static int id = 40;
+	
 	public enum Nationality{ Afghanistan, Albania, Algeria, AmericanSamoa, Andorra, Angola, Anguilla,
     Antarctica, AntiguaandBarbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas,
     Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia,
@@ -117,25 +119,25 @@ public class Referee {
     WallisandFutunaIslands, WesternSahara, Yemen, Yugoslavia, Zambia, Zimbabwe }
     
     @Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Column(name="Id")
 	private int referee_id;
     
-    @Column(name="Name")
+//    @Column(name="Name")
 	private String name;
 	
-	@Column(name="Surname")
+//	@Column(name="Surname")
 	private String surname;
 	
-	@Column(name="Nationality")
-	@Enumerated(EnumType.STRING)
+//	@Column(name="Nationality")
+	//@Enumerated(EnumType.STRING)
 	private Nationality nationality;
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinTable(name="refereeing",
-			joinColumns=@JoinColumn(name="Referee_id"),
-			inverseJoinColumns=@JoinColumn(name="Match_id"))
+//	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+//			CascadeType.DETACH, CascadeType.REFRESH})
+//	@JoinTable(name="refereeing",
+//			joinColumns=@JoinColumn(name="Referee_id"),
+//			inverseJoinColumns=@JoinColumn(name="Match_id"))
 	private List<Match> matches;
 
 	public Referee() {

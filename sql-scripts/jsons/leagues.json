@@ -1,4 +1,10 @@
-[{"Id":1, "Name":"Germany 2019", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
- {"Id":2, "Name":"Germany 2018", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
- {"Id":3, "Name":"Poland 2019", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1},
- {"Id":4, "Name":"Poland 2018", "Nationality":0, "Level":1, "Win_pts":3, "Draw_pts":1}]
+<<<<<<< HEAD
+[{"league_id":1, "name":"Germany 2019", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":2, "name":"Germany 2018", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":3, "name":"Poland 2019", "nationality":"Poland", "level":1, "win_pts":3, "draw_pts":1},
+=======
+[{"league_id":1, "name":"Germany 2019", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":2, "name":"Germany 2018", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":3, "name":"Poland 2019", "nationality":"Poland", "level":1, "win_pts":3, "draw_pts":1},
+>>>>>>> 3b37584b3952ef7c47e439edeee5dd0eec3951ea
+ {"league_id":4, "name":"Poland 2018", "nationality":"Poland", "level":1, "win_pts":3, "draw_pts":1}]

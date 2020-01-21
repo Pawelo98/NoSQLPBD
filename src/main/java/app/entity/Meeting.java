@@ -17,40 +17,41 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
-
-@Entity
-@Table(name="Meetings")
+@Document
+//@Entity
+//@Table(name="Meetings")
 public class Meeting {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="Id")
 	private int meeting_id;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Building")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Building")
 	private Building building;
 	
-	@Column(name="Room")
+	//@Column(name="Room")
 	private String room;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name="Initiator")
+	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	//		CascadeType.DETACH, CascadeType.REFRESH})
+	//@JoinColumn(name="Initiator")
 	private User initiator;
 	
-	@Column(name="Estimated_length")
+	//@Column(name="Estimated_length")
 	private float estimated_length;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	@Column(name="Meeting_date")
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//@Temporal(TemporalType.DATE)
+	//@Column(name="Meeting_date")
 	private Date meeting_date;
 					
-	@OneToMany(mappedBy="meeting",
-    		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-    				CascadeType.DETACH, CascadeType.REFRESH})
+	//@OneToMany(mappedBy="meeting",
+    		//cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+    		//		CascadeType.DETACH, CascadeType.REFRESH})
     private List<Invite> invites;
 
 	public Meeting() {
