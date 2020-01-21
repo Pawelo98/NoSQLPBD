@@ -132,7 +132,7 @@
 				<tr>
 					<td> ${tempUser.username} </td>
 					<td> ${tempUser.enabled} </td>
-					<td> ${tempUser.registrationDate} </td>
+					<td> ${tempUser.password} </td>
 					<td> ${tempUser.name} </td>
 					<td> ${tempUser.surname} </td>
 					<td> ${tempUser.address} </td>
