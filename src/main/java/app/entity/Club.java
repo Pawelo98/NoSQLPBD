@@ -20,7 +20,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="clubs")
 //@Entity
 //@Table(name = "Clubs")
 public class Club {
@@ -250,15 +250,15 @@ public class Club {
 			users = new HashSet<>();
 		}
 		users.add(tempUser);
-		tempUser.setClub(this);
+		tempUser.setClub(this.getClub_id());
 	}
 
-	public void addBuilding(Building tempBuilding) {
-		if (buildings == null) {
-			buildings = new HashSet<>();
-		}
-		buildings.add(tempBuilding);
-		tempBuilding.setClub(this);
-	}
+//	public void addBuilding(Building tempBuilding) {
+//		if (buildings == null) {
+//			buildings = new HashSet<>();
+//		}
+//		buildings.add(tempBuilding);
+//		tempBuilding.setClub(this);
+//	}
 
 }

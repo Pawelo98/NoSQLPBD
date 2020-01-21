@@ -25,7 +25,7 @@ import javax.persistence.TemporalType;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Document
+@Document(collection="matches")
 //@Entity
 //@Table(name="Matches")
 public class Match {

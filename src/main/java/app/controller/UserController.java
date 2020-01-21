@@ -31,8 +31,6 @@ import app.entity.Referee;
 import app.entity.User;
 import app.entity.Worker;
 import app.entity.Building.Type;
-import app.entity.Worker.Position;
-import app.entity.Worker.StrongFoot;
 import app.service.AuthorityService;
 import app.service.BuildingService;
 import app.service.ClubService;
@@ -83,12 +81,13 @@ public class UserController {
 		
 		String pass = user.getPassword();
 		String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-		user.setPassword("{bcrypt}" + hashedPass);
-		Authority auth = new Authority(user, "ROLE_PHYSICAL");
+		user.setPassword(hashedPass);
+		//Authority auth = new Authority(user, "ROLE_PHYSICAL");
 		
-		user.addAuthority(auth);
+		user.addRole("ROLE_PHYSICAL");
+		//user.addAuthority(auth);
 		userService.saveUser(user);
-		authorityService.saveAuthority(auth);
+		//authorityService.saveAuthority(auth);
 		
 		return "redirect:/admins";
 	}
@@ -97,15 +96,9 @@ public class UserController {
 	public String updateUser(@ModelAttribute("user") User user)
 	{
 		String pass = user.getPassword();
-		if(pass.length()>=8) {
-			String passFirst = pass.substring(0, 8);
-			if(!passFirst.equals("{bcrypt}")) {
-				String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-				user.setPassword("{bcrypt}" + hashedPass);
-			}
-		} else {
+		if(pass.length()<=30) {
 			String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-			user.setPassword("{bcrypt}" + hashedPass);
+			user.setPassword(hashedPass);
 		}
 		
 		user.setEnabled(1);
@@ -255,18 +248,18 @@ public class UserController {
 			
 			// dodawanie budynk�w klubowych
 			
-			for(int h=0; h<5; h++) {
-				String nameBuilding = faker.company().name();
-				String addressBuilding = faker.address().fullAddress();
-				float surface = 200 + generator.nextInt(2000);
-				String[] types = {"Pitch", "Training", "Medical", "Research", "Warehouse"};
-				String type = types[generator.nextInt(types.length)];
-				if(h==0)
-					type = "Stadium";
-				Building building = new Building(surface, nameBuilding, addressBuilding, type);
-				building.setClub(club);
-				buildingService.saveBuilding(building);
-			}
+//			for(int h=0; h<5; h++) {
+//				String nameBuilding = faker.company().name();
+//				String addressBuilding = faker.address().fullAddress();
+//				float surface = 200 + generator.nextInt(2000);
+//				String[] types = {"Pitch", "Training", "Medical", "Research", "Warehouse"};
+//				String type = types[generator.nextInt(types.length)];
+//				if(h==0)
+//					type = "Stadium";
+//				Building building = new Building(surface, nameBuilding, addressBuilding, type);
+//				building.setClub(club);
+//				buildingService.saveBuilding(building);
+//			}
 		}
 		return "redirect:/user/list";
 	}

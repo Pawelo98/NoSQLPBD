@@ -105,7 +105,7 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		
 		model.addAttribute("buildings", buildings);
 		
@@ -137,6 +137,7 @@ public class DemoController {
 	public String listLeagues(Model model)
 	{
 		List<League> league = leagueService.getLeagues();
+		//List<League> league = leagueService.getLeaguesMongo();
 		model.addAttribute("league", league);
 		
 		List<Club> club = clubService.getClubs();
@@ -261,9 +262,10 @@ public class DemoController {
 	}
 	
 	@PostMapping("/saveReferee")
-	public String saveReferee(@ModelAttribute("referee") Referee referee){
+	public String saveReferee(@ModelAttribute("refereeId") Referee referee){
 
 		refereeService.saveReferee(referee);
+		
 	return "redirect:/referees";
 	}
 	

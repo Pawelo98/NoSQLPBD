@@ -46,7 +46,7 @@ public class MeetingController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		model.addAttribute("buildings", buildings);
 		
 		model.addAttribute("meeting", meeting);
@@ -58,7 +58,7 @@ public class MeetingController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		model.addAttribute("buildings", buildings);
 		
 		Meeting meeting = new Meeting();

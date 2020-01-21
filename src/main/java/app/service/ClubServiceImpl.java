@@ -71,4 +71,10 @@ public class ClubServiceImpl implements ClubService {
 		return clubDAO.getPoints(theId);
 	}
 
+	@Override
+	public Club getClub(int theId) {
+		// TODO Auto-generated method stub
+		return clubDAO.getClub(theId);
+	}
+
 }
