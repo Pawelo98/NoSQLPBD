@@ -253,12 +253,12 @@ public class Club {
 		tempUser.setClub(this.getClub_id());
 	}
 
-	public void addBuilding(Building tempBuilding) {
-		if (buildings == null) {
-			buildings = new HashSet<>();
-		}
-		buildings.add(tempBuilding);
-		tempBuilding.setClub(this);
-	}
+//	public void addBuilding(Building tempBuilding) {
+//		if (buildings == null) {
+//			buildings = new HashSet<>();
+//		}
+//		buildings.add(tempBuilding);
+//		tempBuilding.setClub(this);
+//	}
 
 }

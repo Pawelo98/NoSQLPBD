@@ -41,6 +41,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 //		auth.inMemoryAuthentication()
 //		.withUser("admin").password("{noop}admin").roles("ADMIN","ADMINISTRATIVE","PHYSICAL");
 		
+		
+		
 	}
 
 	@Override

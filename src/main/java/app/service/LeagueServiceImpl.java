@@ -22,5 +22,12 @@ public class LeagueServiceImpl implements LeagueService {
 	public List<League> getLeagues() {
 		return leagueDAO.getLeagues();
 	}
+	
+	@Override
+	@Transactional
+	public List<League> getLeaguesMongo() {
+		// TODO Auto-generated method stub
+		return leagueDAO.findAllLeagues();
+	}
 
 }

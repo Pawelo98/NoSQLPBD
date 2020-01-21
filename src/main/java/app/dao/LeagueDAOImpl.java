@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import app.entity.League;
+import app.entity.Referee;
 import app.entity.User;
 
 @Repository
@@ -41,6 +42,13 @@ public class LeagueDAOImpl implements LeagueDAO {
 //		
 //		session.save(league);
 		mongoTemplate.save(league);
+	}
+	
+	
+	@Override
+	public List<League> findAllLeagues() {
+		// TODO Auto-generated method stub
+		return mongoTemplate.findAll(League.class,COLLECTION_NAME );
 	}
 
 }

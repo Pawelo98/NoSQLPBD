@@ -9,4 +9,6 @@ public interface LeagueDAO {
 	public List<League> getLeagues();
 
 	public void saveLeague(League league);
+
+	public List<League> findAllLeagues();
 }

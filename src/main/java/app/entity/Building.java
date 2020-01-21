@@ -48,7 +48,7 @@ public class Building {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Club")
-	private Club club;
+	private int club;
 	
 	//@OneToMany(mappedBy="building",
     //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
@@ -120,11 +120,11 @@ public class Building {
 
 	
 	
-	public Club getClub() {
+	public int getClub() {
 		return club;
 	}
 
-	public void setClub(Club club) {
+	public void setClub(int club) {
 		this.club = club;
 	}
 
