@@ -33,30 +33,30 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		//auth.jdbcAuthentication().dataSource(securityDataSource);
 		
 		//nowe pomys³y
-		auth
-        .userDetailsService(userAuthService)
-        .passwordEncoder(new BCryptPasswordEncoder());
+//		auth
+//        .userDetailsService(userAuthService)
+//        .passwordEncoder(new BCryptPasswordEncoder());
 		
-//		UserBuilder users = User.withDefaultPasswordEncoder();
-//		auth.inMemoryAuthentication()
-//		.withUser("admin").password("{noop}admin").roles("ADMIN","ADMINISTRATIVE","PHYSICAL");
+		UserBuilder users = User.withDefaultPasswordEncoder();
+		auth.inMemoryAuthentication()
+		.withUser("admin").password("{noop}admin").roles("ADMIN","ADMINISTRATIVE","PHYSICAL");
 		
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-
-		http.authorizeRequests()
-				.anyRequest().authenticated()
-			.and()
-			.formLogin()
-				.loginPage("/showMyLoginPage")
-				.loginProcessingUrl("/authenticateTheUser")
-				.permitAll()
-				.and()
-				.logout().permitAll();
-		
-	}
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//
+//		http.authorizeRequests()
+//				.anyRequest().authenticated()
+//			.and()
+//			.formLogin()
+//				.loginPage("/showMyLoginPage")
+//				.loginProcessingUrl("/authenticateTheUser")
+//				.permitAll()
+//				.and()
+//				.logout().permitAll();
+//		
+//	}
 		
 }
 
