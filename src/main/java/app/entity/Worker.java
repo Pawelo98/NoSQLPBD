@@ -20,14 +20,14 @@ import javax.persistence.Table;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+//@Document(collection="clubs")
 //@Entity
 //@Table(name="Workers")
 public class Worker {
 
 	public enum Department { Greenkeepers, Accountants, Masseurs, Cleaners, Players };
-	public enum StrongFoot { Left, Right, Both };
-	public enum Position { Goalkeeper, Defender, Midfielder, Striker };
+//	public enum StrongFoot { Left, Right, Both };
+//	public enum Position { Goalkeeper, Defender, Midfielder, Striker };
 	
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -58,7 +58,7 @@ public class Worker {
 	
 	//@Column(name="Strong_foot")
 	//@Enumerated(EnumType.STRING)
-	private StrongFoot strongFoot;
+//	private StrongFoot strongFoot;
 	
 	//@Column(name="Height")
 	private int height;
@@ -68,7 +68,7 @@ public class Worker {
 	
 	//@Column(name="Position")
 	//@Enumerated(EnumType.STRING)
-	private Position position;
+	private String position;
 	
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
@@ -92,10 +92,11 @@ public class Worker {
 		this.isPlayer = isPlayer;
 		this.isInjured = isInjured;
 		this.shirtNumber = shirtNumber;
-		this.strongFoot = StrongFoot.valueOf(strongFoot);
+//		this.strongFoot = StrongFoot.valueOf(strongFoot);
 		this.height = height;
 		this.weight = weight;
-		this.position = Position.valueOf(position);
+//		this.position = Position.valueOf(position);
+		this.position = position;
 	}
 
 	public Worker(String name, String surname, float earnings, String department) {
@@ -170,13 +171,13 @@ public class Worker {
 		this.shirtNumber = shirtNumber;
 	}
 
-	public StrongFoot getStrongFoot() {
-		return strongFoot;
-	}
-
-	public void setStrongFoot(StrongFoot strongFoot) {
-		this.strongFoot = strongFoot;
-	}
+//	public StrongFoot getStrongFoot() {
+//		return strongFoot;
+//	}
+//
+//	public void setStrongFoot(StrongFoot strongFoot) {
+//		this.strongFoot = strongFoot;
+//	}
 
 	public int getHeight() {
 		return height;
@@ -194,13 +195,21 @@ public class Worker {
 		this.weight = weight;
 	}
 
-	public Position getPosition() {
-		return position;
-	}
+//	public Position getPosition() {
+//		return position;
+//	}
+//
+//	public void setPosition(Position position) {
+//		this.position = position;
+//	}
+	
+	public String getPosition() {
+	return position;
+}
 
-	public void setPosition(Position position) {
-		this.position = position;
-	}
+public void setPosition(String position) {
+	this.position = position;
+}
 	
 
 	public Club getClub() {
@@ -215,7 +224,7 @@ public class Worker {
 	public String toString() {
 		return "Worker [worker_id=" + worker_id + ", name=" + name + ", surname=" + surname + ", earnings=" + earnings
 				+ ", department=" + department + ", isPlayer=" + isPlayer + ", isInjured=" + isInjured
-				+ ", shirtNumber=" + shirtNumber + ", strongFoot=" + strongFoot + ", height=" + height + ", weight="
-				+ weight + ", position=" + position+"]";
+				+ ", shirtNumber=" + shirtNumber + ", strongFoot= Right"  + ", height=" + height + ", weight="
+				+ weight + ", position= Defender" +"]";
 	}
 }

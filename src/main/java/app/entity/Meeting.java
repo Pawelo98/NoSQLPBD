@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
-@Document
+@Document(collection="meetings")
 //@Entity
 //@Table(name="Meetings")
 public class Meeting {

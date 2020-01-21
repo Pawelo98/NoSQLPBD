@@ -62,6 +62,14 @@ public class ClubController {
 		List<Building> building = buildingService.getBuildings(theId);
 		theModel.addAttribute("buildingFromDB", building);
 		
+		Club clubik = clubService.getClub(theId);
+		List<Club> clu = new ArrayList<Club>();
+		clu.clear();
+		for(int i=0; i< building.size();i++) {
+			clu.add(clubik);
+		}
+		
+		theModel.addAttribute("clu", clu);
 
 		List<Club> club = clubService.getClubs();
 		theModel.addAttribute("clubss", club);
@@ -80,8 +88,13 @@ public class ClubController {
 
 	@GetMapping("/workers")
 	public String listWorkers(@RequestParam("selected") int theId, Model model) {
-		List<Worker> worker = workerService.getWorkers(theId);
-		model.addAttribute("worker", worker);
+//		List<Worker> worker = workerService.getWorkers(theId);
+//		model.addAttribute("worker", worker);
+		//zamiast tego pobieramy klub i berzemy liste workerow
+		
+		Club clubik = clubService.getClub(theId);
+		List<Worker> workerClubik=new ArrayList<Worker>(clubik.getWorkers());
+		model.addAttribute("worker", workerClubik);
 
 		List<Club> club = clubService.getClubs();
 		model.addAttribute("club", club);
@@ -91,10 +104,11 @@ public class ClubController {
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
 		
-		if(curr.getClub().getClub_id()==theId)
+
+//		if(curr.getClub().getClub_id()==theId)
 			return "workers-view";
-		else 
-			return "workers-no-pay-view";
+//		else 
+//			return "workers-no-pay-view";
 		
 		
 		

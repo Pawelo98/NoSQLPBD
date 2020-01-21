@@ -12,12 +12,12 @@ import javax.persistence.Table;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+//@Document
 //@Entity
 //@Table(name="Invites")
 public class Invite {
 	
-	@Id
+	//@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	//@Column(name="Id")
 	private int invite_id;

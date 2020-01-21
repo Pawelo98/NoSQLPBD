@@ -1,0 +1,4 @@
+[{"league_id":1, "name":"Germany 2019", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":2, "name":"Germany 2018", "nationality":"Germany", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":3, "name":"Poland 2019", "nationality":"Poland", "level":1, "win_pts":3, "draw_pts":1},
+ {"league_id":4, "name":"Poland 2018", "nationality":"Poland", "level":1, "win_pts":3, "draw_pts":1}]

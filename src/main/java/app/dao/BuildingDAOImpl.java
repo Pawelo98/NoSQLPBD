@@ -6,9 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-import org.hibernate.query.Query;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Building;
@@ -44,7 +45,10 @@ public class BuildingDAOImpl implements BuildingDAO {
 //		List<Building> clubs = query.getResultList();
 //		
 //		return clubs;
-		return mongoTemplate.findAll(Building.class, COLLECTION_NAME);
+		
+//		Query quer = new Query(Criteria.where("club_id").is(1));
+		Query quer = new Query(Criteria.where("club").is(theId));
+		return mongoTemplate.find(quer, Building.class,"buildings");
 	}
 	
 	@Override
@@ -61,7 +65,12 @@ public class BuildingDAOImpl implements BuildingDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(building);
-		mongoTemplate.save(building);
+		
+		if (!mongoTemplate.collectionExists(Building.class)) {
+            mongoTemplate.createCollection(Building.class);
+
+        }
+		mongoTemplate.save(building, COLLECTION_NAME);
 	}
 
 	@Override
