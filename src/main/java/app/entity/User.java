@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Document
+@Document(collection="users")
 //@Entity
 //@Table(name="Users")
 public class User {
@@ -53,7 +53,7 @@ public class User {
 		//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 		//		CascadeType.DETACH, CascadeType.REFRESH})
 		//@JoinColumn(name="Club")
-		private Club club;
+		private int club;
 		
 		//@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 		//		CascadeType.REFRESH}, fetch = FetchType.EAGER)
@@ -141,11 +141,11 @@ public class User {
 			this.address = address;
 		}
 
-		public Club getClub() {
+		public int getClub() {
 			return club;
 		}
 
-		public void setClub(Club club) {
+		public void setClub(int club) {
 			this.club = club;
 		}
 
@@ -200,6 +200,4 @@ public class User {
 			invites.add(tempInvite);
 			tempInvite.setWorker(this);
 		}
-
-		
 }

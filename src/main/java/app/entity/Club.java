@@ -250,7 +250,7 @@ public class Club {
 			users = new HashSet<>();
 		}
 		users.add(tempUser);
-		tempUser.setClub(this);
+		tempUser.setClub(this.getClub_id());
 	}
 
 	public void addBuilding(Building tempBuilding) {

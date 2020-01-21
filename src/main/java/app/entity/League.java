@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="leagues")
 //@Entity
 //@Table(name="Leagues")
 public class League {

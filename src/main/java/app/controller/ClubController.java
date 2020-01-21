@@ -91,7 +91,7 @@ public class ClubController {
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
 		
-		if(curr.getClub().getClub_id()==theId)
+		if(curr.getClub()==theId)
 			return "workers-view";
 		else 
 			return "workers-no-pay-view";
