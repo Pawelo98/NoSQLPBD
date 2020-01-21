@@ -25,8 +25,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 //@Entity
 //@Table(name="Users")
 public class User {
-
+	
 		@Id
+		private String objectId;
+
 		//@Column(name="username")
 		private String username;
 			
@@ -187,6 +189,13 @@ public class User {
 			authorities.add(tempAuthority);
 		}
 		
+		public void addRole(String role) {
+			if (roles == null) {
+				roles = new ArrayList<>();
+			}
+			roles.add(role);
+		}
+		
 		public void addMeeting(Meeting tempMeeting) {
 			if (meetings == null) {
 				meetings = new HashSet<>();
@@ -209,5 +218,13 @@ public class User {
 
 		public void setRoles(List<String> roles) {
 			this.roles = roles;
+		}
+
+		public String getObjectId() {
+			return objectId;
+		}
+
+		public void setObjectId(String objectId) {
+			this.objectId = objectId;
 		}
 }
