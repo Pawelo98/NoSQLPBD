@@ -8,7 +8,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.stereotype.Repository;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 import app.dao.UserDAO;
 import app.entity.User;
@@ -60,7 +66,10 @@ public class UserDAOImpl implements UserDAO {
 //		User user = session.get(User.class, username);
 //		
 //		return user;
-		return mongoTemplate.findById(username, User.class);
+		//BasicQuery query = (BasicQuery) new BasicQuery("{'username': 'admin' }").limit(1);
+		
+		User user = mongoTemplate.findById(username, User.class);
+		return user;
 	}
 
 	@Override
