@@ -8,6 +8,7 @@ import app.entity.Club;
 public interface ClubService {
 
 	public List<Club> getClubs();
+	public Club getClub(int theId);
 
 	public void saveClub(Club club);
 
