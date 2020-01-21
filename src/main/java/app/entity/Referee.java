@@ -82,6 +82,8 @@ public class Referee {
 //	    }
 //    };
 	
+	public static int id = 40;
+	
 	public enum Nationality{ Afghanistan, Albania, Algeria, AmericanSamoa, Andorra, Angola, Anguilla,
     Antarctica, AntiguaandBarbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas,
     Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia,

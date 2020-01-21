@@ -25,7 +25,7 @@ public class RefereeServiceImpl implements RefereeService {
 	@Override
 	@Transactional
 	public void saveReferee(Referee referee) {
-		refereeDAO.saveReferee(referee);
+		refereeDAO.addReferee(referee);
 	}
 
 	@Override
