@@ -31,8 +31,6 @@ import app.entity.Referee;
 import app.entity.User;
 import app.entity.Worker;
 import app.entity.Building.Type;
-import app.entity.Worker.Position;
-import app.entity.Worker.StrongFoot;
 import app.service.AuthorityService;
 import app.service.BuildingService;
 import app.service.ClubService;
