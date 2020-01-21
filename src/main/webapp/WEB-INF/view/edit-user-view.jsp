@@ -140,7 +140,7 @@
 					
 					<tr>
 						<td><label>Klub:</label></td>
-						<td><form:select path="club.club_id">
+						<td><form:select path="club">
 								
 								<c:forEach var="tempclub" items="${club}">
 								<form:option value="${tempclub.club_id}" label="${tempclub.name}" />

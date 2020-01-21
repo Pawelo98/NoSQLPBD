@@ -81,12 +81,13 @@ public class UserController {
 		
 		String pass = user.getPassword();
 		String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-		user.setPassword("{bcrypt}" + hashedPass);
-		Authority auth = new Authority(user, "ROLE_PHYSICAL");
+		user.setPassword(hashedPass);
+		//Authority auth = new Authority(user, "ROLE_PHYSICAL");
 		
-		user.addAuthority(auth);
+		user.addRole("ROLE_PHYSICAL");
+		//user.addAuthority(auth);
 		userService.saveUser(user);
-		authorityService.saveAuthority(auth);
+		//authorityService.saveAuthority(auth);
 		
 		return "redirect:/admins";
 	}
@@ -95,15 +96,9 @@ public class UserController {
 	public String updateUser(@ModelAttribute("user") User user)
 	{
 		String pass = user.getPassword();
-		if(pass.length()>=8) {
-			String passFirst = pass.substring(0, 8);
-			if(!passFirst.equals("{bcrypt}")) {
-				String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-				user.setPassword("{bcrypt}" + hashedPass);
-			}
-		} else {
+		if(pass.length()<=30) {
 			String hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt());
-			user.setPassword("{bcrypt}" + hashedPass);
+			user.setPassword(hashedPass);
 		}
 		
 		user.setEnabled(1);

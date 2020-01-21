@@ -5,10 +5,17 @@ import java.util.UUID;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.BasicQuery;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 import app.dao.UserDAO;
 import app.entity.User;
@@ -49,7 +56,10 @@ public class UserDAOImpl implements UserDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(user);
-		mongoTemplate.save(user);
+		if (!mongoTemplate.collectionExists(User.class)) {
+            mongoTemplate.createCollection(User.class);
+        }
+        mongoTemplate.save(user, COLLECTION_NAME);
 	}
 
 	@Override
@@ -60,7 +70,13 @@ public class UserDAOImpl implements UserDAO {
 //		User user = session.get(User.class, username);
 //		
 //		return user;
-		return mongoTemplate.findById(username, User.class);
+		//BasicQuery query = (BasicQuery) new BasicQuery("{'username': 'admin' }").limit(1);
+		
+		Query query = new Query(Criteria.where("username").is(username));
+		
+		User user = mongoTemplate.findOne(query, User.class, "users");
+		
+		return user;
 	}
 
 	@Override
@@ -72,7 +88,7 @@ public class UserDAOImpl implements UserDAO {
 //		query.setParameter("usernameFromView", username);
 //		
 //		query.executeUpdate();
-		User user = mongoTemplate.findById(username, User.class);
+		User user = this.getUser(username);
 		mongoTemplate.remove(user, COLLECTION_NAME);
 	}
 
