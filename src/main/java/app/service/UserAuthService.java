@@ -12,6 +12,7 @@ import app.entity.User;
 @Service
 public class UserAuthService implements UserDetailsService {
 	
+	@Autowired
 	private final UserService userService;
 	
 	@Autowired

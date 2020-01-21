@@ -137,7 +137,7 @@
   {
     "club_id": 2,
     "name": "Sachsen frogs",
-    "nationality": 0,
+    "nationality": "Poland",
     "shirtHome": "sand",
     "shirtAway": "pink",
     "workers": [
