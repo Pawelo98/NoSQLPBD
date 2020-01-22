@@ -31,7 +31,7 @@ public class Meeting {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Building")
-	private Building building;
+	private int building;
 	
 	//@Column(name="Room")
 	private String room;
@@ -39,7 +39,7 @@ public class Meeting {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Initiator")
-	private User initiator;
+	private String initiator;
 	
 	//@Column(name="Estimated_length")
 	private float estimated_length;
@@ -73,11 +73,11 @@ public class Meeting {
 		this.meeting_id = meeting_id;
 	}
 
-	public Building getBuilding() {
+	public int getBuilding() {
 		return building;
 	}
 
-	public void setBuilding(Building building) {
+	public void setBuilding(int building) {
 		this.building = building;
 	}
 
@@ -89,11 +89,11 @@ public class Meeting {
 		this.room = room;
 	}
 
-	public User getInitiator() {
+	public String getInitiator() {
 		return initiator;
 	}
 
-	public void setInitiator(User initiator) {
+	public void setInitiator(String initiator) {
 		this.initiator = initiator;
 	}
 

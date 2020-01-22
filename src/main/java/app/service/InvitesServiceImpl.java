@@ -7,13 +7,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import app.dao.InviteDAO;
+import app.dao.MeetingDAO;
+import app.dao.UserDAO;
 import app.entity.Invite;
+import app.entity.Meeting;
 
 @Service
 public class InvitesServiceImpl implements InvitesService {
 
 	@Autowired
 	InviteDAO inviteDAO;
+	
+	@Autowired
+	MeetingDAO meetingDAO;
 	
 	@Override
 	@Transactional
@@ -23,14 +29,16 @@ public class InvitesServiceImpl implements InvitesService {
 
 	@Override
 	@Transactional
-	public List<Invite> getPastInvitesForUser(String username) {
-		return inviteDAO.getPastInvitesForUser(username);
+	public List<Meeting> getPastInvitesForUser(String username) {
+		//return inviteDAO.getPastInvitesForUser(username);
+		return meetingDAO.getPastInvitesForUser(username);
 	}
 
 	@Override
 	@Transactional
-	public List<Invite> getFutureInvitesForUser(String username) {
-		return inviteDAO.getFutureInvitesForUser(username);
+	public List<Meeting> getFutureInvitesForUser(String username) {
+		//return inviteDAO.getFutureInvitesForUser(username);
+		return meetingDAO.getFutureInvitesForUser(username);
 	}
 
 	@Override

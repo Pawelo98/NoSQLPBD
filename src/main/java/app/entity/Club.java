@@ -228,13 +228,13 @@ public class Club {
 			hostMatches = new HashSet<>();
 		}
 		hostMatches.add(tempMatch);
-		tempMatch.setHost(this);
+		tempMatch.setHost(this.getClub_id());
 	}
 
 	
 	 public void addVisitor(Match tempMatch) { if (visitorMatches == null) {
 	 visitorMatches = new HashSet<>(); } visitorMatches.add(tempMatch);
-	 tempMatch.setVisitor(this); }
+	 tempMatch.setVisitor(this.getClub_id()); }
 	 
 
 	public void addWorker(Worker tempWorker) {

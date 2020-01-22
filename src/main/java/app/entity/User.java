@@ -25,10 +25,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 //@Entity
 //@Table(name="Users")
 public class User {
-	
-		@Id
-		private String objectId;
 
+		@Id
 		//@Column(name="username")
 		private String username;
 			
@@ -66,7 +64,7 @@ public class User {
 		//@OneToMany(mappedBy="worker",
 	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	    //				CascadeType.DETACH, CascadeType.REFRESH})
-	    private Set<Invite> invites;
+	    private List<Invite> invites;
 		
 		//@OneToMany(mappedBy="initiator",
 	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
@@ -169,11 +167,11 @@ public class User {
 			this.meetings = meetings;
 		}
 
-		public Set<Invite> getInvites() {
+		public List<Invite> getInvites() {
 			return invites;
 		}
 
-		public void setInvites(Set<Invite> invites) {
+		public void setInvites(List<Invite> invites) {
 			this.invites = invites;
 		}
 
@@ -201,12 +199,12 @@ public class User {
 				meetings = new HashSet<>();
 			}
 			meetings.add(tempMeeting);
-			tempMeeting.setInitiator(this);
+			tempMeeting.setInitiator(this.getUsername());
 		}
 		
 		public void addInvite(Invite tempInvite) {
 			if (invites == null) {
-				invites = new HashSet<>();
+				invites = new ArrayList<>();
 			}
 			invites.add(tempInvite);
 			tempInvite.setWorker(this);
@@ -218,13 +216,5 @@ public class User {
 
 		public void setRoles(List<String> roles) {
 			this.roles = roles;
-		}
-
-		public String getObjectId() {
-			return objectId;
-		}
-
-		public void setObjectId(String objectId) {
-			this.objectId = objectId;
 		}
 }
