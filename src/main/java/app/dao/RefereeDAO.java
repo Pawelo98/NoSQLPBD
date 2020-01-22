@@ -9,6 +9,7 @@ public interface RefereeDAO {
 	public List<Referee> getReferees();
 
 	public void saveReferee(Referee referee);
+	public void updateReferee(Referee referee);
 
 	public Referee getReferee(int theId);
 
