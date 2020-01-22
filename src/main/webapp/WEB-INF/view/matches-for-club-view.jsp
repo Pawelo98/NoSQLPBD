@@ -36,7 +36,7 @@ html, body{
 	border-collapse: collapse;
 	border-bottom: 1px solid gray;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	width: 90%;
+	width: 100%;
 	padding: 20px;
 }
 
@@ -228,7 +228,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 					</c:forEach>
 				</table>
 				
-				<table class="reftab">
+				<!-- <table class="reftab">
 					<tr>
 
 						<th>Sędzia</th>
@@ -240,7 +240,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 							<td>${tempref.surname}</td>
 						</tr>
 					</c:forEach>
-				</table>
+				</table>-->
 			</div>
 		</div>
 		<div id="content2">
@@ -280,7 +280,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 						</tr>
 					</c:forEach>
 				</table>
-				<table class="reftab">
+				<!--  <table class="reftab">
 					<tr>
 
 						<th>Sędzia</th>
@@ -292,7 +292,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 							<td>${tempref2.surname}</td>
 						</tr>
 					</c:forEach>
-				</table>
+				</table>-->
 			</div>
 		</div>
 	</div>
