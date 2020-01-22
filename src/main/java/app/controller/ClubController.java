@@ -95,6 +95,14 @@ public class ClubController {
 		Club clubik = clubService.getClub(theId);
 		List<Worker> workerClubik=new ArrayList<Worker>(clubik.getWorkers());
 		model.addAttribute("worker", workerClubik);
+		
+		List<Club> clu = new ArrayList<Club>();
+		clu.clear();
+		for(int i=0; i< workerClubik.size();i++) {
+			clu.add(clubik);
+		}
+		
+		model.addAttribute("clu", clu);
 
 		List<Club> club = clubService.getClubs();
 		model.addAttribute("club", club);
@@ -105,10 +113,10 @@ public class ClubController {
 		User curr = userService.getUser(username);
 		
 
-//		if(curr.getClub().getClub_id()==theId)
+		if(curr.getClub()==theId)
 			return "workers-view";
-//		else 
-//			return "workers-no-pay-view";
+		else 
+			return "workers-no-pay-view";
 		
 		
 		
@@ -116,10 +124,27 @@ public class ClubController {
 	
 	@GetMapping("/workersPayoff")
 	public String listWorkersWithPayoff(@RequestParam("clubId") int theId, Model model) {
-		List<Worker> worker = workerService.getWorkers(theId);
-		model.addAttribute("worker", worker);
+//		List<Worker> worker = workerService.getWorkers(theId);
+//		model.addAttribute("worker", worker);
 		
-		String salary = workerService.getSumOfSalary(theId);
+		Club clubik = clubService.getClub(theId);
+		List<Worker> workerClubik=new ArrayList<Worker>(clubik.getWorkers());
+		model.addAttribute("worker", workerClubik);
+		
+		List<Club> clu = new ArrayList<Club>();
+		clu.clear();
+		for(int i=0; i< workerClubik.size();i++) {
+			clu.add(clubik);
+		}
+		
+		model.addAttribute("clu", clu);
+		
+		double salarySum=0;
+		for(int i=0; i<workerClubik.size();i++) {
+			salarySum=salarySum+workerClubik.get(i).getEarnings();
+		}
+		
+		String salary = String.valueOf(salarySum);
 		model.addAttribute("salary", salary);
 
 		List<Club> club = clubService.getClubs();
@@ -155,26 +180,26 @@ public class ClubController {
 		List<Referee> matchReferees = new ArrayList<Referee>();
 		matchReferees.clear();
 		
-		for(int i=0; i<matchPast.size();i++) {
-			
-			if (matchPast.get(i).getReferees().isEmpty())
-						matchReferees.add(allReferees.get(0));
-			else
-				matchReferees.add(matchPast.get(i).getReferees().get(0));
-		}
+//		for(int i=0; i<matchPast.size();i++) {
+//			
+//			if (matchPast.get(i).getReferees().isEmpty())
+//						matchReferees.add(allReferees.get(0));
+//			else
+//				matchReferees.add(matchPast.get(i).getReferees().get(0));
+//		}
 
 		model.addAttribute("refjsp", matchReferees);
 		
 		List<Referee> matchReferees2 = new ArrayList<Referee>();
-		matchReferees2.clear();
-		
-		for(int i=0; i<matchFuture.size();i++) {
-			
-			if (matchFuture.get(i).getReferees().isEmpty())
-						matchReferees2.add(allReferees.get(0));
-			else
-				matchReferees2.add(matchFuture.get(i).getReferees().get(0));
-		}
+//		matchReferees2.clear();
+//		
+//		for(int i=0; i<matchFuture.size();i++) {
+//			
+//			if (matchFuture.get(i).getReferees().isEmpty())
+//						matchReferees2.add(allReferees.get(0));
+//			else
+//				matchReferees2.add(matchFuture.get(i).getReferees().get(0));
+//		}
 		model.addAttribute("refjsp2", matchReferees2);
 
 		return "matches-for-club-view";
