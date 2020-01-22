@@ -207,15 +207,16 @@ public class ClubController {
 		Building building = buildingService.getBuilding(theId);
 		theModel.addAttribute("building", building);
 		
-		List<Club> club = clubService.getClubs();
-		theModel.addAttribute("club", club);
+//		List<Club> club = clubService.getClubs();
+//		theModel.addAttribute("club", club);
 
 		return "building-add-form";
 
 	}
 
 	@PostMapping("/saveBuilding")
-	public String saveBuilding(@ModelAttribute("building") Building theBuilding) {
+	public String saveBuilding(@ModelAttribute("buildingId") Building theBuilding) {
+		
 		buildingService.saveBuilding(theBuilding);
 		// jak z enumami, z listy??
 		// jak z klubami?? nazwy, a nie id

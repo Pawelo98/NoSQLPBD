@@ -49,8 +49,8 @@ public class BuildingDAOImpl implements BuildingDAO {
 //		return clubs;
 		
 //		Query quer = new Query(Criteria.where("club_id").is(1));
-		Query quer = new Query(Criteria.where("club").is(theId));
-		return mongoTemplate.find(quer, Building.class,"buildings");
+		Query quer = new Query(Criteria.where("building_id").is(theId));
+		return mongoTemplate.find(quer, Building.class, COLLECTION_NAME);
 	}
 	
 	@Override
@@ -90,7 +90,9 @@ public class BuildingDAOImpl implements BuildingDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		Building theBuilding = session.get(Building.class, theId);
 //		return theBuilding;
-		return mongoTemplate.findById(theId, Building.class);
+		Query query = new Query(Criteria.where("building_id").is(theId));
+		return mongoTemplate.findOne(query, Building.class, COLLECTION_NAME);
+		
 	}
 
 	@Override
