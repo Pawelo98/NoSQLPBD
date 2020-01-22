@@ -46,7 +46,7 @@ public class MeetingController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		model.addAttribute("buildings", buildings);
 		
 		model.addAttribute("meeting", meeting);
@@ -58,17 +58,21 @@ public class MeetingController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		List<Building> buildings = buildingService.getBuildings(curr.getClub().getClub_id());
+		List<Building> buildings = buildingService.getBuildings(curr.getClub());
 		model.addAttribute("buildings", buildings);
 		
 		Meeting meeting = new Meeting();
-		meeting.setInitiator(curr);
+		meeting.setInitiator(curr.getUsername());
 		model.addAttribute("meeting", meeting);
 		return "meeting-form";
 	}
 	
 	@PostMapping("/saveMeeting")
 	public String saveMeeting(@ModelAttribute("meeting") Meeting meeting){
+		
+		meeting.setMeeting_id(90);
+		
+		meeting.setInvites(null);
 	
 		meetingsService.saveMeeting(meeting);
 		
@@ -93,7 +97,7 @@ public class MeetingController {
 		model.addAttribute("meeting", meeting);
 		
 		Invite invite = new Invite();
-		invite.setMeeting(meeting);
+		invite.setMeeting(meeting.getMeeting_id());
 		model.addAttribute("invite", invite);
 		return "invite-form";
 	}
