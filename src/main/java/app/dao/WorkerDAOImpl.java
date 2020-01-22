@@ -52,7 +52,7 @@ public class WorkerDAOImpl implements WorkerDAO {
 //		Session session = sessionFactory.getCurrentSession();
 //		
 //		session.saveOrUpdate(worker);
-		mongoTemplate.save(worker);
+		mongoTemplate.save(worker, COLLECTION_NAME);
 	}
 	
 	@Override

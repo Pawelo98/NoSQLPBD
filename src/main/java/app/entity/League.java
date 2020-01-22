@@ -182,12 +182,12 @@ public class League {
 				+ ", draw_pts=" + draw_pts + ", matches=" + matches + "]";
 	}
 
-	public void add(Match tempMatch) {
-		if (matches == null) {
-			matches = new ArrayList<>();
-		}
-		matches.add(tempMatch);
-		tempMatch.setLeague(this);
-	}
+//	public void add(Match tempMatch) {
+//		if (matches == null) {
+//			matches = new ArrayList<>();
+//		}
+//		matches.add(tempMatch);
+//		tempMatch.setLeague(this);
+//	}
     
 }
