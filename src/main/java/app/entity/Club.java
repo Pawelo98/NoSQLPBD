@@ -223,6 +223,7 @@ public class Club {
 				+ "]";
 	}
 
+
 //	public void addHost(Match tempMatch) {
 //		if (hostMatches == null) {
 //			hostMatches = new HashSet<>();
@@ -235,6 +236,7 @@ public class Club {
 //	 public void addVisitor(Match tempMatch) { if (visitorMatches == null) {
 //	 visitorMatches = new HashSet<>(); } visitorMatches.add(tempMatch);
 //	 tempMatch.setVisitor(this); }
+
 	 
 
 	public void addWorker(Worker tempWorker) {

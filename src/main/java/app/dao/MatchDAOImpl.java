@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 
 
 import app.entity.Club;
+import app.entity.Invite;
 import app.entity.Match;
 
 import app.entity.User;
