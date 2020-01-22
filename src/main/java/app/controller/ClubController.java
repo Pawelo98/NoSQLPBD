@@ -223,7 +223,7 @@ public class ClubController {
 		List<Club> club = clubService.getClubs();
 		model.addAttribute("club", club);
 
-		return "building-add-form";
+		return "building-add2-form";
 
 	}
 
@@ -243,6 +243,16 @@ public class ClubController {
 	public String saveBuilding(@ModelAttribute("buildingId") Building theBuilding) {
 		
 		buildingService.saveBuilding(theBuilding);
+		// jak z enumami, z listy??
+		// jak z klubami?? nazwy, a nie id
+		return "redirect:/clubs/buildingsManagement";
+
+	}
+	
+	@PostMapping("/addBuilding")
+	public String addBuilding(@ModelAttribute("buildingId") Building theBuilding) {
+		
+		buildingService.addBuilding(theBuilding);
 		// jak z enumami, z listy??
 		// jak z klubami?? nazwy, a nie id
 		return "redirect:/clubs/buildingsManagement";
@@ -280,7 +290,7 @@ public class ClubController {
 	}
 
 	@PostMapping("/saveWorker")
-	public String saveWorker(@ModelAttribute("worker") Worker theWorker) {
+	public String saveWorker(@ModelAttribute("workerId") Worker theWorker) {
 		workerService.saveWorker(theWorker);
 		
 		return "redirect:/clubs/workersManagement";
