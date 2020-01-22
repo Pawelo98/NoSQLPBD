@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Referee;
@@ -44,8 +45,22 @@ public class RefereeDAOImpl implements RefereeDAO {
 		if (!mongoTemplate.collectionExists(Referee.class)) {
             mongoTemplate.createCollection(Referee.class);
 
-        }
-        mongoTemplate.save(referee, COLLECTION_NAME);
+        }       
+			mongoTemplate.save(referee, COLLECTION_NAME);
+	
+	
+	}
+	
+	@Override
+	public void updateReferee(Referee referee) {
+		
+		Query query = new Query(Criteria.where("referee_id").is(referee.getReferee_id()));
+		Update update = Update.update("surname", referee.getSurname());
+        Update update2 = Update.update("name", referee.getName());
+        Update update3 = Update.update("nationality", referee.getNationality());
+        mongoTemplate.updateFirst(query, update, Referee.class);
+        mongoTemplate.updateFirst(query, update2, Referee.class);
+        mongoTemplate.updateFirst(query, update3, Referee.class);
 	}
 	
 

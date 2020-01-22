@@ -26,6 +26,12 @@ public class BuildingServiceImpl implements BuildingService {
 	public void saveBuilding(Building building) {
 		buildingDAO.saveBuilding(building);
 	}
+	
+	@Override
+	@Transactional
+	public void addBuilding(Building building) {
+		buildingDAO.addBuilding(building);
+	}
 
 	@Override
 	@Transactional

@@ -269,6 +269,14 @@ public class DemoController {
 	return "redirect:/referees";
 	}
 	
+	@PostMapping("/updateReferee")
+	public String updateReferee(@ModelAttribute("refereeId") Referee referee){
+
+		refereeService.updateReferee(referee);
+		
+	return "redirect:/referees";
+	}
+	
 	@GetMapping("/showFormForAddReferee")
 	public String showFormForAddReferee(Model theModel) {
 		
@@ -358,7 +366,7 @@ public class DemoController {
 		
 		theModel.addAttribute("nationality", nationality);
 		
-		return "referee-form";
+		return "referee-form-update";
 	}
 	
 	@GetMapping("/deleteReferee")

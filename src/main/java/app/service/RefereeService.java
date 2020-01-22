@@ -9,6 +9,7 @@ public interface RefereeService {
 	public List<Referee> getReferees();
 
 	public void saveReferee(Referee ref);
+	public void updateReferee(Referee ref);
 	
 	public Referee getReferee(int theId);
 
