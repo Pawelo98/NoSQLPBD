@@ -4,6 +4,7 @@ import java.util.List;
 
 import app.entity.Invite;
 import app.entity.Meeting;
+import app.entity.User;
 
 public interface MeetingDAO {
 
@@ -19,7 +20,9 @@ public interface MeetingDAO {
 
 	void addMeeting(Meeting meeting);
 
-	public List<Meeting> getPastInvitesForUser(String username);
+	public List<Meeting> getPastInvitesForUser(User user);
 
-	public List<Meeting> getFutureInvitesForUser(String username);
+	public List<Meeting> getFutureInvitesForUser(User user);
+
+	public List<Meeting> getInvitesForUser(User user);
 }
