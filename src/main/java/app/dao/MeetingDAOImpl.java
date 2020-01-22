@@ -1,13 +1,16 @@
 package app.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Match;
@@ -77,7 +80,14 @@ public class MeetingDAOImpl implements MeetingDAO {
 //		query.setMaxResults(5);
 //		
 //		List<Meeting> meetings = query.list();
-		List<Meeting> meetings = new ArrayList<Meeting>();
+		Date now = new Date();
+		Query query = new Query(Criteria.where("initiator").is(username).and("meeting_date").lt(now)).limit(5);
+		
+		query.with(new Sort(Sort.Direction.ASC, "meeting_date"));
+		
+		List<Meeting> meetings = mongoTemplate.find(query, Meeting.class, "meetings");
+		
+		//List<Meeting> meetings = new ArrayList<Meeting>();
 		return meetings;
 	}
 
@@ -97,8 +107,24 @@ public class MeetingDAOImpl implements MeetingDAO {
 //		query.setMaxResults(5);
 //		
 //		List<Meeting> meetings = query.list();
-		List<Meeting> meetings = new ArrayList<Meeting>();
+		Date now = new Date();
+		Query query = new Query(Criteria.where("initiator").is(username).and("meeting_date").gt(now)).limit(5);
+		
+		query.with(new Sort(Sort.Direction.ASC, "meeting_date"));
+		
+		List<Meeting> meetings = mongoTemplate.find(query, Meeting.class, "meetings");
+		
 		return meetings;
+	}
+	
+	@Override
+	public List<Meeting> getPastInvitesForUser(String username) {
+		return null;
+	}
+	
+	@Override
+	public List<Meeting> getFutureInvitesForUser(String username) {
+		return null;
 	}
 
 	@Override

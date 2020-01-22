@@ -187,7 +187,7 @@ public class League {
 			matches = new ArrayList<>();
 		}
 		matches.add(tempMatch);
-		tempMatch.setLeague(this);
+		tempMatch.setLeague(this.getLeague_id());
 	}
     
 }
