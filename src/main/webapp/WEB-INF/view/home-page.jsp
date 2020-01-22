@@ -136,9 +136,9 @@ tr:nth-child(odd) {background: #BBBBBB}
 				</tr>
 				<c:forEach var="tempMatch" items="${matchesDemo}">
 					<tr>
-						<td>${tempMatch.host.name}</td>
+						<td>${tempMatch.host}</td>
 						<td>vs.</td>
-						<td>${tempMatch.visitor.name}</td>
+						<td>${tempMatch.visitor}</td>
 						<td>${tempMatch.home_goals}</td>
 						<td>:</td>
 						<td>${tempMatch.away_goals}</td>
@@ -152,14 +152,12 @@ tr:nth-child(odd) {background: #BBBBBB}
 			<table id="tableID">
 				<tr>
 					<th>Data spotkania</th>
-					<th>Nazwa budynku</th>
 					<th>Pokój</th>
 					<th>Czas trwania</th>
 				</tr>
 				<c:forEach var="tempMeeting" items="${meetingsPast}">
 					<tr>
 						<td>${tempMeeting.meeting_date}</td>
-						<td>${tempMeeting.building.name}</td>
 						<td>${tempMeeting.room}</td>
 						<td>${tempMeeting.estimated_length} h</td>
 					</tr>
@@ -172,19 +170,15 @@ tr:nth-child(odd) {background: #BBBBBB}
 				<tr>
 					<th>Data spotkania</th>
 					<th>Inicjator spotkania</th>
-					<th>Nazwa budynku</th>
 					<th>Pokój</th>
 					<th>Czas trwania</th>
-					<th>Wiadomość</th>
 				</tr>
 				<c:forEach var="tempInvite" items="${invitesPast}">
 					<tr>
-						<td>${tempInvite.meeting.meeting_date}</td>
-						<td>${tempInvite.meeting.initiator.username}</td>
-						<td>${tempInvite.meeting.building.name}</td>
-						<td>${tempInvite.meeting.room}</td>
-						<td>${tempInvite.meeting.estimated_length} h</td>
-						<td>${tempInvite.message}</td>
+						<td>${tempInvite.meeting_date}</td>
+						<td>${tempInvite.initiator}</td>
+						<td>${tempInvite.room}</td>
+						<td>${tempInvite.estimated_length} h</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -296,8 +290,8 @@ tr:nth-child(odd) {background: #BBBBBB}
 				</tr>
 				<c:forEach var="tempMatch" items="${matchesFuture}">
 					<tr>
-						<td>${tempMatch.host.name}</td>
-						<td>${tempMatch.visitor.name}</td>
+						<td>${tempMatch.host}</td>
+						<td>${tempMatch.visitor}</td>
 						<td>${tempMatch.game_date}</td>
 					</tr>
 				</c:forEach>
@@ -308,14 +302,12 @@ tr:nth-child(odd) {background: #BBBBBB}
 			<table id="tableID3">
 				<tr>
 					<th>Data spotkania</th>
-					<th>Nazwa budynku</th>
 					<th>Pokój</th>
 					<th>Czas trwania</th>
 				</tr>
 				<c:forEach var="tempMeeting" items="${meetingsFuture}">
 					<tr>
 						<td>${tempMeeting.meeting_date}</td>
-						<td>${tempMeeting.building.name}</td>
 						<td>${tempMeeting.room}</td>
 						<td>${tempMeeting.estimated_length} h</td>
 					</tr>
@@ -328,15 +320,13 @@ tr:nth-child(odd) {background: #BBBBBB}
 				<tr>
 					<th>Data spotkania</th>
 					<th>Inicjator spotkania</th>
-					<th>Nazwa budynku</th>
 					<th>Czas trwania</th>
 				</tr>
 				<c:forEach var="tempInvite" items="${invitesFuture}">
 					<tr>
-						<td>${tempInvite.meeting.meeting_date}</td>
-						<td>${tempInvite.meeting.initiator.username}</td>
-						<td>${tempInvite.meeting.building.name}</td>
-						<td>${tempInvite.meeting.estimated_length} h</td>
+						<td>${tempInvite.meeting_date}</td>
+						<td>${tempInvite.initiator}</td>
+						<td>${tempInvite.estimated_length} h</td>
 					</tr>
 				</c:forEach>
 			</table>

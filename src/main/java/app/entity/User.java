@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Document
+@Document(collection="users")
 //@Entity
 //@Table(name="Users")
 public class User {
@@ -53,7 +53,9 @@ public class User {
 		//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 		//		CascadeType.DETACH, CascadeType.REFRESH})
 		//@JoinColumn(name="Club")
-		private Club club;
+		private int club;
+		
+		private List<String> roles;
 		
 		//@OneToMany(mappedBy = "id.user", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 		//		CascadeType.REFRESH}, fetch = FetchType.EAGER)
@@ -62,7 +64,7 @@ public class User {
 		//@OneToMany(mappedBy="worker",
 	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	    //				CascadeType.DETACH, CascadeType.REFRESH})
-	    private Set<Invite> invites;
+	    private List<Invite> invites;
 		
 		//@OneToMany(mappedBy="initiator",
 	    //		cascade= {CascadeType.PERSIST, CascadeType.MERGE,
@@ -141,11 +143,11 @@ public class User {
 			this.address = address;
 		}
 
-		public Club getClub() {
+		public int getClub() {
 			return club;
 		}
 
-		public void setClub(Club club) {
+		public void setClub(int club) {
 			this.club = club;
 		}
 
@@ -165,11 +167,11 @@ public class User {
 			this.meetings = meetings;
 		}
 
-		public Set<Invite> getInvites() {
+		public List<Invite> getInvites() {
 			return invites;
 		}
 
-		public void setInvites(Set<Invite> invites) {
+		public void setInvites(List<Invite> invites) {
 			this.invites = invites;
 		}
 
@@ -185,21 +187,33 @@ public class User {
 			authorities.add(tempAuthority);
 		}
 		
+		public void addRole(String role) {
+			if (roles == null) {
+				roles = new ArrayList<>();
+			}
+			roles.add(role);
+		}
+		
 		public void addMeeting(Meeting tempMeeting) {
 			if (meetings == null) {
 				meetings = new HashSet<>();
 			}
 			meetings.add(tempMeeting);
-			tempMeeting.setInitiator(this);
+			tempMeeting.setInitiator(this.getUsername());
 		}
 		
 		public void addInvite(Invite tempInvite) {
 			if (invites == null) {
-				invites = new HashSet<>();
+				invites = new ArrayList<>();
 			}
 			invites.add(tempInvite);
-			tempInvite.setWorker(this);
 		}
 
-		
+		public List<String> getRoles() {
+			return roles;
+		}
+
+		public void setRoles(List<String> roles) {
+			this.roles = roles;
+		}
 }

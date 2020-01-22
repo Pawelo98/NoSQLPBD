@@ -25,7 +25,7 @@ import javax.persistence.TemporalType;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Document
+@Document(collection="matches")
 //@Entity
 //@Table(name="Matches")
 public class Match {
@@ -54,14 +54,14 @@ public class Match {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Host")
-	private Club host;
+	private int host;
 	
 	
 	
 	 //@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		 CascadeType.DETACH, CascadeType.REFRESH}) 
 	 //@JoinColumn(name="Visitor")
-	 private Club visitor;
+	 private int visitor;
 	 
 	
 	//@Column(name="Home_goals")
@@ -73,16 +73,16 @@ public class Match {
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	//@Temporal(TemporalType.DATE)
 	//@Column(name="Game_date")
-	private Date game_date;
+	private String game_date;
 	
 	//@Column(name="Winner")
 	//@Enumerated(EnumType.STRING)
-	private Winner winner;
+	private String winner;
 	
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
     //				CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="League")
-	private League league;
+	private int league;
 	
 //	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 //			CascadeType.DETACH, CascadeType.REFRESH,},fetch = FetchType.EAGER)
@@ -95,12 +95,12 @@ public class Match {
 		
 	}
 
-	public Match(int home_goals, int away_goals, Date game_date, String winner) {
+	public Match(int home_goals, int away_goals, String game_date, String winner) {
 		
 		this.home_goals = home_goals;
 		this.away_goals = away_goals;
 		this.game_date = game_date;
-		this.winner = Winner.valueOf(winner);
+		this.winner = winner;
 	}
 	
 	public int getMatch_id() {
@@ -111,18 +111,18 @@ public class Match {
 		this.match_id = match_id;
 	}
 
-	public Club getHost() {
+	public int getHost() {
 		return host;
 	}
 
-	public void setHost(Club host) {
+	public void setHost(int host) {
 		this.host = host;
 	}
 
 	
-	 public Club getVisitor() { return visitor; }
+	 public int getVisitor() { return visitor; }
 	 
-	 public void setVisitor(Club visitor) { this.visitor = visitor; }
+	 public void setVisitor(int visitor) { this.visitor = visitor; }
 	 
 
 	public int getHome_goals() {
@@ -141,27 +141,27 @@ public class Match {
 		this.away_goals = away_goals;
 	}
 
-	public Date getGame_date() {
+	public String getGame_date() {
 		return game_date;
 	}
 
-	public void setGame_date(Date game_date) {
+	public void setGame_date(String game_date) {
 		this.game_date = game_date;
 	}
 
-	public Winner getWinner() {
+	public String getWinner() {
 		return winner;
 	}
 
-	public void setWinner(Winner winner) {
+	public void setWinner(String winner) {
 		this.winner = winner;
 	}
 
-	public League getLeague() {
+	public int getLeague() {
 		return league;
 	}
 
-	public void setLeague(League league) {
+	public void setLeague(int league) {
 		this.league = league;
 	}
 

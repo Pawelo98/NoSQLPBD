@@ -94,12 +94,12 @@
 		<form:form action="saveMeeting" modelAttribute="meeting" method="POST">
 			
 			<form:hidden path="meeting_id" />
-			<form:hidden path="initiator.username" />
+			<form:hidden path="initiator" />
 			<table>
 				<tbody>	
 					<tr>
 						<td><label>Budynek:</label></td>
-						<td><form:select path="building.building_id">
+						<td><form:select path="building">
 								
 								<c:forEach var="tempclub" items="${buildings}">
 								<form:option value="${tempclub.building_id}" label="${tempclub.name}" />
@@ -109,7 +109,7 @@
 					</tr>		
 					<tr>
 						<td><label>Inicjator:</label></td>
-						<td><form:input path="initiator.username" disabled="true"/></td>
+						<td><form:input path="initiator" disabled="true"/></td>
 					</tr>	
 					<tr>
 						<td><label>Pokój:</label></td>

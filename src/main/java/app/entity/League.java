@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="leagues")
 //@Entity
 //@Table(name="Leagues")
 public class League {
@@ -187,7 +187,7 @@ public class League {
 			matches = new ArrayList<>();
 		}
 		matches.add(tempMatch);
-		tempMatch.setLeague(this);
+		tempMatch.setLeague(this.getLeague_id());
 	}
     
 }

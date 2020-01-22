@@ -139,7 +139,7 @@ public class Building {
 			meetings = new HashSet<>();
 		}
 		meetings.add(tempMeeting);
-		tempMeeting.setBuilding(this);
+		tempMeeting.setBuilding(this.getBuilding_id());
 	}
 	
 }
