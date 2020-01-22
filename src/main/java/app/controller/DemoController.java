@@ -269,6 +269,14 @@ public class DemoController {
 	return "redirect:/referees";
 	}
 	
+	@PostMapping("/updateReferee")
+	public String updateReferee(@ModelAttribute("refereeId") Referee referee){
+
+		refereeService.updateReferee(referee);
+		
+	return "redirect:/referees";
+	}
+	
 	@GetMapping("/showFormForAddReferee")
 	public String showFormForAddReferee(Model theModel) {
 		
@@ -304,7 +312,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "T�rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Turkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
@@ -350,7 +358,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "T�rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Turkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
@@ -358,7 +366,7 @@ public class DemoController {
 		
 		theModel.addAttribute("nationality", nationality);
 		
-		return "referee-form";
+		return "referee-form-update";
 	}
 	
 	@GetMapping("/deleteReferee")
