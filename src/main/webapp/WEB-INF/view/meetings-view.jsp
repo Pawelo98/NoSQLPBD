@@ -120,7 +120,6 @@ tr:nth-child(odd) {background: #BBBBBB}
 		<table id="tableID">
 			<tr>
 				<th>Data spotkania</th>
-				<th>Nazwa budynku</th>
 				<th>Pokój</th>
 				<th>Czas trwania</th>
 				<th>Akcje</th>
@@ -134,7 +133,6 @@ tr:nth-child(odd) {background: #BBBBBB}
 				</c:url>
 				<tr>
 					<td>${tempMeeting.meeting_date}</td>
-					<td>${tempMeeting.building.name}</td>
 					<td>${tempMeeting.room}</td>
 					<td>${tempMeeting.estimated_length} h</td>
 					<td>
@@ -151,19 +149,15 @@ tr:nth-child(odd) {background: #BBBBBB}
 			<tr>
 				<th>Data spotkania</th>
 				<th>Inicjator spotkania</th>
-				<th>Nazwa budynku</th>
 				<th>Pokój</th>
 				<th>Czas trwania</th>
-				<th>Wiadomość</th>
 			</tr>
 			<c:forEach var="tempInvite" items="${invites}">
 				<tr>
-					<td>${tempInvite.meeting.meeting_date}</td>
-					<td>${tempInvite.meeting.initiator.username}</td>
-					<td>${tempInvite.meeting.building.name}</td>
-					<td>${tempInvite.meeting.room}</td>
-					<td>${tempInvite.meeting.estimated_length} h</td>
-					<td>${tempInvite.message}</td>
+					<td>${tempInvite.meeting_date}</td>
+					<td>${tempInvite.initiator}</td>
+					<td>${tempInvite.room}</td>
+					<td>${tempInvite.estimated_length} h</td>
 				</tr>
 			</c:forEach>
 		</table>
