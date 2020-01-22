@@ -7,12 +7,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 
 import app.entity.Building;
+import app.entity.Referee;
 import app.entity.User;
 
 @Repository
@@ -66,11 +68,21 @@ public class BuildingDAOImpl implements BuildingDAO {
 //		
 //		session.saveOrUpdate(building);
 		
-		if (!mongoTemplate.collectionExists(Building.class)) {
-            mongoTemplate.createCollection(Building.class);
-
-        }
-		mongoTemplate.save(building, COLLECTION_NAME);
+//		if (!mongoTemplate.collectionExists(Building.class)) {
+//            mongoTemplate.createCollection(Building.class);
+//
+//        }
+//		mongoTemplate.save(building, COLLECTION_NAME);
+		
+		Query query = new Query(Criteria.where("building_id").is(building.getBuilding_id()));
+		Update update = Update.update("address", building.getAddress());
+        Update update2 = Update.update("name", building.getName());
+        Update update3 = Update.update("surface", building.getSurface());
+        Update update4 = Update.update("type", building.getType());
+        mongoTemplate.updateFirst(query, update, Building.class);
+        mongoTemplate.updateFirst(query, update2, Building.class);
+        mongoTemplate.updateFirst(query, update3, Building.class);
+        mongoTemplate.updateFirst(query, update4, Building.class);
 	}
 
 	@Override
