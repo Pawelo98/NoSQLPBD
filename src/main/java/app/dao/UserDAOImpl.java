@@ -1,11 +1,13 @@
 package app.dao;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -18,6 +20,8 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
 import app.dao.UserDAO;
+import app.entity.Invite;
+import app.entity.Meeting;
 import app.entity.User;
 
 @Repository

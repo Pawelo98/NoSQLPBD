@@ -62,7 +62,7 @@ public class MeetingController {
 		model.addAttribute("buildings", buildings);
 		
 		Meeting meeting = new Meeting();
-		meeting.setInitiator(curr);
+		meeting.setInitiator(curr.getUsername());
 		model.addAttribute("meeting", meeting);
 		return "meeting-form";
 	}

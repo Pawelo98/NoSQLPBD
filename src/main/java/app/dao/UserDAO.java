@@ -2,6 +2,7 @@ package app.dao;
 
 import java.util.List;
 
+import app.entity.Invite;
 import app.entity.User;
 
 public interface UserDAO {
