@@ -28,12 +28,7 @@ public class Invite {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Meeting")
-	private Meeting meeting;
-	
-	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-	//		CascadeType.DETACH, CascadeType.REFRESH})
-	//@JoinColumn(name="Worker")
-	private User worker;
+	private int meeting;
 	
 	public Invite() {
 		
@@ -63,20 +58,12 @@ public class Invite {
 	}
 	
 
-	public Meeting getMeeting() {
+	public int getMeeting() {
 		return meeting;
 	}
 
-	public void setMeeting(Meeting meeting) {
+	public void setMeeting(int meeting) {
 		this.meeting = meeting;
-	}
-
-	public User getWorker() {
-		return worker;
-	}
-
-	public void setWorker(User worker) {
-		this.worker = worker;
 	}
 
 	@Override
@@ -84,8 +71,4 @@ public class Invite {
 		return "Invite [invite_id=" + invite_id + ", message=" + message
 				+ "]";
 	}
-
-	
-	
-	
 }

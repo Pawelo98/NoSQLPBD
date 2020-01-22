@@ -58,8 +58,25 @@ public class Meeting {
 		
 	}
 
-	public Meeting(String room, float estimated_length, Date meeting_date) {
+	public Meeting(int building, String initiator, int meeting_id, String room, float estimated_length, Date meeting_date) {
+		this.meeting_id = meeting_id;
+		this.initiator = initiator;
+		this.building = building;
+		this.room = room;
+		this.estimated_length = estimated_length;
+		this.meeting_date = meeting_date;
+	}
 	
+	public Meeting(int building, String initiator, String room, float estimated_length, Date meeting_date) {
+		this.initiator = initiator;
+		this.building = building;
+		this.room = room;
+		this.estimated_length = estimated_length;
+		this.meeting_date = meeting_date;
+	}
+	
+	public Meeting(String room, float estimated_length, Date meeting_date) {
+		
 		this.room = room;
 		this.estimated_length = estimated_length;
 		this.meeting_date = meeting_date;
@@ -131,7 +148,7 @@ public class Meeting {
 			invites = new ArrayList<>();
 		}
 		invites.add(tempInvite);
-		tempInvite.setMeeting(this);
+		tempInvite.setMeeting(this.getMeeting_id());
 	}
 	
 }
