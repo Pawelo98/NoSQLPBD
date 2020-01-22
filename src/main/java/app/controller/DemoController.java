@@ -120,7 +120,7 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		List<Meeting> meetings = meetingsService.getMeetingsForUser(username);
-		List<Invite> invites = invitesService.getInvitesForUser(username);
+		List<Meeting> invites = invitesService.getInvitesForUser(username);
 		
 		model.addAttribute("meetings", meetings);
 		model.addAttribute("invites", invites);

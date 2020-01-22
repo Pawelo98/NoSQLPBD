@@ -207,7 +207,6 @@ public class User {
 				invites = new ArrayList<>();
 			}
 			invites.add(tempInvite);
-			tempInvite.setWorker(this);
 		}
 
 		public List<String> getRoles() {

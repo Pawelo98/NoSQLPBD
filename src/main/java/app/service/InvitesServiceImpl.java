@@ -11,6 +11,7 @@ import app.dao.MeetingDAO;
 import app.dao.UserDAO;
 import app.entity.Invite;
 import app.entity.Meeting;
+import app.entity.User;
 
 @Service
 public class InvitesServiceImpl implements InvitesService {
@@ -21,24 +22,33 @@ public class InvitesServiceImpl implements InvitesService {
 	@Autowired
 	MeetingDAO meetingDAO;
 	
+	@Autowired
+	UserDAO userDAO;
+	
 	@Override
 	@Transactional
-	public List<Invite> getInvitesForUser(String username) {
-		return inviteDAO.getInvitesForUser(username);
+	public List<Meeting> getInvitesForUser(String username) {
+		User user = userDAO.getUser(username);
+		
+		return meetingDAO.getInvitesForUser(user);
 	}
 
 	@Override
 	@Transactional
 	public List<Meeting> getPastInvitesForUser(String username) {
 		//return inviteDAO.getPastInvitesForUser(username);
-		return meetingDAO.getPastInvitesForUser(username);
+		User user = userDAO.getUser(username);
+		
+		return meetingDAO.getPastInvitesForUser(user);
 	}
 
 	@Override
 	@Transactional
 	public List<Meeting> getFutureInvitesForUser(String username) {
 		//return inviteDAO.getFutureInvitesForUser(username);
-		return meetingDAO.getFutureInvitesForUser(username);
+		
+		User user = userDAO.getUser(username);
+		return meetingDAO.getFutureInvitesForUser(user);
 	}
 
 	@Override

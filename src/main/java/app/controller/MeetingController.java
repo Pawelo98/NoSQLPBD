@@ -69,6 +69,10 @@ public class MeetingController {
 	
 	@PostMapping("/saveMeeting")
 	public String saveMeeting(@ModelAttribute("meeting") Meeting meeting){
+		
+		meeting.setMeeting_id(90);
+		
+		meeting.setInvites(null);
 	
 		meetingsService.saveMeeting(meeting);
 		
@@ -93,7 +97,7 @@ public class MeetingController {
 		model.addAttribute("meeting", meeting);
 		
 		Invite invite = new Invite();
-		invite.setMeeting(meeting);
+		invite.setMeeting(meeting.getMeeting_id());
 		model.addAttribute("invite", invite);
 		return "invite-form";
 	}
