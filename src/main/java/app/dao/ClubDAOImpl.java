@@ -35,6 +35,9 @@ public class ClubDAOImpl implements ClubDAO {
 //		query.setParameter("leagueID", theId);
 //		
 //		List<Object[]> clubs = query.getResultList();
+		Criteria criteria = new Criteria();
+		//Query query = new Query(criteria.andOperator(Criteria.where("match.league.league_id").is(theId),()) ;
+		
 		List<Object[]> clubs = new ArrayList<Object[]>();
 		
 		return clubs;
