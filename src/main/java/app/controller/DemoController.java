@@ -304,7 +304,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "T�rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Turkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
@@ -350,7 +350,7 @@ public class DemoController {
 		        "SouthGeorgiaandtheSouthSandwichIslands", "Spain", "SriLanka", "StHelena", "StPierreandMiquelon",
 		        "Sudan", "Suriname", "SvalbardandJanMayenIslands", "Swaziland", "Sweden", "Switzerland", "SyrianArabRepublic",
 		        "Taiwan", "ProvinceofChina", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga",
-		        "TrinidadandTobago", "Tunisia", "T�rkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
+		        "TrinidadandTobago", "Tunisia", "Turkiye", "Turkmenistan", "TurksandCaicosIslands", "Tuvalu", "Uganda", "Ukraine",
 		        "UnitedArabEmirates", "UnitedKingdom", "UnitedStates", "UnitedStatesMinorOutlyingIslands", "Uruguay",
 		        "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "VirginIslandsBr", "VirginIslandsUS",
 		        "WallisandFutunaIslands", "WesternSahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
