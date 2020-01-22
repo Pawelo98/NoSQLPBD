@@ -75,19 +75,19 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		User curr = userService.getUser(username);
-		//List<Match> matches = matchesService.getPastMatches(curr.getClub().getClub_id());
-		List<Match> matches = new ArrayList<Match>();
-		//List<Match> matchesFuture = matchesService.getFutureMatches(curr.getClub().getClub_id());
-		List<Match> matchesFuture = new ArrayList<Match>();
+		List<Match> matches = matchesService.getPastMatches(curr.getClub());
+		//List<Match> matches = new ArrayList<Match>();
+		List<Match> matchesFuture = matchesService.getFutureMatches(curr.getClub());
+		//List<Match> matchesFuture = new ArrayList<Match>();
 		
 		List<Meeting> meetingsPast = meetingsService.getPastMeetingsForUser(username);
-		List<Invite> invitesPast = invitesService.getPastInvitesForUser(username);
+		List<Meeting> invitesPast = invitesService.getPastInvitesForUser(username);
 		
 		model.addAttribute("meetingsPast", meetingsPast);
 		model.addAttribute("invitesPast", invitesPast);
 		
 		List<Meeting> meetingsFuture = meetingsService.getFutureMeetingsForUser(username);
-		List<Invite> invitesFuture = invitesService.getFutureInvitesForUser(username);
+		List<Meeting> invitesFuture = invitesService.getFutureInvitesForUser(username);
 		
 		model.addAttribute("meetingsFuture", meetingsFuture);
 		model.addAttribute("invitesFuture", invitesFuture);
@@ -120,7 +120,7 @@ public class DemoController {
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		String username = loggedInUser.getName();
 		List<Meeting> meetings = meetingsService.getMeetingsForUser(username);
-		List<Invite> invites = invitesService.getInvitesForUser(username);
+		List<Meeting> invites = invitesService.getInvitesForUser(username);
 		
 		model.addAttribute("meetings", meetings);
 		model.addAttribute("invites", invites);

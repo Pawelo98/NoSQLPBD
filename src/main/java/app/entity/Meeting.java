@@ -31,7 +31,7 @@ public class Meeting {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Building")
-	private Building building;
+	private int building;
 	
 	//@Column(name="Room")
 	private String room;
@@ -39,7 +39,7 @@ public class Meeting {
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 	//		CascadeType.DETACH, CascadeType.REFRESH})
 	//@JoinColumn(name="Initiator")
-	private User initiator;
+	private String initiator;
 	
 	//@Column(name="Estimated_length")
 	private float estimated_length;
@@ -58,8 +58,25 @@ public class Meeting {
 		
 	}
 
-	public Meeting(String room, float estimated_length, Date meeting_date) {
+	public Meeting(int building, String initiator, int meeting_id, String room, float estimated_length, Date meeting_date) {
+		this.meeting_id = meeting_id;
+		this.initiator = initiator;
+		this.building = building;
+		this.room = room;
+		this.estimated_length = estimated_length;
+		this.meeting_date = meeting_date;
+	}
 	
+	public Meeting(int building, String initiator, String room, float estimated_length, Date meeting_date) {
+		this.initiator = initiator;
+		this.building = building;
+		this.room = room;
+		this.estimated_length = estimated_length;
+		this.meeting_date = meeting_date;
+	}
+	
+	public Meeting(String room, float estimated_length, Date meeting_date) {
+		
 		this.room = room;
 		this.estimated_length = estimated_length;
 		this.meeting_date = meeting_date;
@@ -73,11 +90,11 @@ public class Meeting {
 		this.meeting_id = meeting_id;
 	}
 
-	public Building getBuilding() {
+	public int getBuilding() {
 		return building;
 	}
 
-	public void setBuilding(Building building) {
+	public void setBuilding(int building) {
 		this.building = building;
 	}
 
@@ -89,11 +106,11 @@ public class Meeting {
 		this.room = room;
 	}
 
-	public User getInitiator() {
+	public String getInitiator() {
 		return initiator;
 	}
 
-	public void setInitiator(User initiator) {
+	public void setInitiator(String initiator) {
 		this.initiator = initiator;
 	}
 
@@ -131,7 +148,7 @@ public class Meeting {
 			invites = new ArrayList<>();
 		}
 		invites.add(tempInvite);
-		tempInvite.setMeeting(this);
+		tempInvite.setMeeting(this.getMeeting_id());
 	}
 	
 }

@@ -77,7 +77,7 @@ public class Match {
 	
 	//@Column(name="Winner")
 	//@Enumerated(EnumType.STRING)
-	private Winner winner;
+	private String winner;
 	
 	//@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
     //				CascadeType.DETACH, CascadeType.REFRESH})
@@ -100,7 +100,7 @@ public class Match {
 		this.home_goals = home_goals;
 		this.away_goals = away_goals;
 		this.game_date = game_date;
-		this.winner = Winner.valueOf(winner);
+		this.winner = winner;
 	}
 	
 	public int getMatch_id() {
@@ -149,11 +149,11 @@ public class Match {
 		this.game_date = game_date;
 	}
 
-	public Winner getWinner() {
+	public String getWinner() {
 		return winner;
 	}
 
-	public void setWinner(Winner winner) {
+	public void setWinner(String winner) {
 		this.winner = winner;
 	}
 
