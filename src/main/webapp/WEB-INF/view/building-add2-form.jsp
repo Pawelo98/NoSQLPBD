@@ -103,7 +103,7 @@
 	<div id="container">
 		<h3>Dodaj budynek</h3>
 
-		<form:form action="saveBuilding" modelAttribute="building"
+		<form:form action="addBuilding" modelAttribute="building"
 			method="POST">
 
 			<form:hidden path="building_id" />

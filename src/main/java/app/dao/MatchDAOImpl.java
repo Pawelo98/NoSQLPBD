@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -107,9 +108,16 @@ public class MatchDAOImpl implements MatchDAO {
 //		query.setMaxResults(10);
 //		
 //		List<Match> matches = query.list();
-		List<Match> matches = new ArrayList<Match>();
-		Match match = new Match();
-		matches.add(match);
+		Criteria criteria = new Criteria();
+		
+		Query query = new Query(criteria.orOperator(Criteria.where("host").is(theId), Criteria.where("visitor").is(theId)).and("game_date").lt("2020-01-23"));
+		//Query query = new Query(Criteria.where("host").is(id)).limit(5);
+		query.with(new Sort(Sort.Direction.DESC, "game_date"));
+		
+		query.limit(5);
+		
+		List<Match> matches = mongoTemplate.find(query, Match.class, "matches");
+		
 		return matches;
 	}
 	
@@ -131,9 +139,15 @@ public class MatchDAOImpl implements MatchDAO {
 //		query.setMaxResults(10);
 //		
 //		List<Match> matches = query.list();
-		List<Match> matches = new ArrayList<Match>();
-		Match match = new Match();
-		matches.add(match);
+		Date now = new Date();
+		Criteria criteria = new Criteria();
+		
+		Query query = new Query(criteria.orOperator(Criteria.where("host").is(theId), Criteria.where("visitor").is(theId)).and("game_date").gt("2020-01-23")).limit(5);
+		
+		query.with(new Sort(Sort.Direction.ASC, "game_date"));
+		
+		List<Match> matches = mongoTemplate.find(query, Match.class, "matches");
+		
 		return matches;
 	}
 

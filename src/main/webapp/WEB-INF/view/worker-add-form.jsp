@@ -143,7 +143,7 @@
 						<td><form:input path="shirtNumber" /></td>
 					</tr>
 
-					<tr>
+					<%-- tr>
 						<td><label>Lepsza noga:</label></td>
 						<td><form:select path="strongFoot">
 								<form:option value="Right" label="Right" />
@@ -152,7 +152,7 @@
 								<form:option value="" label="Nie piłkarz" />
 
 							</form:select></td>
-					</tr>
+					</tr --%>
 
 					<tr>
 						<td><label>Wzrost:</label></td>
@@ -164,7 +164,7 @@
 						<td><form:input path="weight" /></td>
 					</tr>
 
-					<tr>
+					<%-- >tr>
 						<td><label>Pozycja:</label></td>
 						<td><form:select path="position">
 								<form:option value="Goalkeeper" label="Goalkeeper" />
@@ -174,7 +174,7 @@
 								<form:option value="" label="Nie piłkarz" />
 
 							</form:select></td>
-					</tr>
+					</tr--%>
 
 					<tr>
 						<td><label>Klub:</label></td>
