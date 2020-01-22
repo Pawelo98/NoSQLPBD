@@ -223,18 +223,20 @@ public class Club {
 				+ "]";
 	}
 
-	public void addHost(Match tempMatch) {
-		if (hostMatches == null) {
-			hostMatches = new HashSet<>();
-		}
-		hostMatches.add(tempMatch);
-		tempMatch.setHost(this.getClub_id());
-	}
 
-	
-	 public void addVisitor(Match tempMatch) { if (visitorMatches == null) {
-	 visitorMatches = new HashSet<>(); } visitorMatches.add(tempMatch);
-	 tempMatch.setVisitor(this.getClub_id()); }
+//	public void addHost(Match tempMatch) {
+//		if (hostMatches == null) {
+//			hostMatches = new HashSet<>();
+//		}
+//		hostMatches.add(tempMatch);
+//		tempMatch.setHost(this);
+//	}
+//
+//	
+//	 public void addVisitor(Match tempMatch) { if (visitorMatches == null) {
+//	 visitorMatches = new HashSet<>(); } visitorMatches.add(tempMatch);
+//	 tempMatch.setVisitor(this); }
+
 	 
 
 	public void addWorker(Worker tempWorker) {

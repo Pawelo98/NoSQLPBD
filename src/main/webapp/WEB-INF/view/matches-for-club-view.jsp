@@ -215,13 +215,13 @@ tr:nth-child(odd) {background: #BBBBBB}
 							<c:param name="matchId" value="${tempmatch.match_id}" />
 						</c:url>
 						<tr>
-							<td>${tempmatch.host.name}</td>
+							<td>${tempmatch.host}</td>
 							<td>${tempmatch.home_goals}</td>
 							<td>:</td>
 							<td>${tempmatch.away_goals}</td>
-							<td>${tempmatch.visitor.name}</td>
+							<td>${tempmatch.visitor}</td>
 							<td>${tempmatch.game_date}</td>
-							<td>${tempmatch.league.name}</td>
+							<td>${tempmatch.league}</td>
 
 							<td><a href="${updateLink}">Edytuj</a></td>
 						</tr>
@@ -269,13 +269,13 @@ tr:nth-child(odd) {background: #BBBBBB}
 							<c:param name="matchId" value="${tempmatch.match_id}" />
 						</c:url>
 						<tr>
-							<td>${tempmatch.host.name}</td>
+							<td>${tempmatch.host}</td>
 
 							<td>--</td>
 
-							<td>${tempmatch.visitor.name}</td>
+							<td>${tempmatch.visitor}</td>
 							<td>${tempmatch.game_date}</td>
-							<td>${tempmatch.league.name}</td>
+							<td>${tempmatch.league}</td>
 							<td><a href="${updateLink}">Edytuj</a></td>
 						</tr>
 					</c:forEach>

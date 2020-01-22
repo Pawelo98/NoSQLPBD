@@ -33,11 +33,19 @@ html, body{
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-table{
+.maintab{
 	border-collapse: collapse;
 	border-bottom: 1px solid gray;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	width: 100%;
+	width: 80%;
+	padding: 20px;
+}
+
+.reftab{
+	border-collapse: collapse;
+	border-bottom: 1px solid gray;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	width: 20%;
 	padding: 20px;
 }
 
@@ -188,14 +196,14 @@ tr:nth-child(odd) {background: #BBBBBB}
 
 
 
-			<table>
+			<div class="row">
+			<table class=maintab>
 				<tr>
 					<th>Nazwisko</th>
 					<th>Imię</th>
 					<th>Dział</th>
 					<th>Pozycja</th>
 					<th>Numer koszulki</th>
-					<th>Klub</th>
 					<th>Edycja</th>
 				</tr>
 
@@ -216,11 +224,25 @@ tr:nth-child(odd) {background: #BBBBBB}
 						<td>${tempworker.department}</td>
 						<td>${tempworker.position}</td>
 						<td>${tempworker.shirtNumber}</td>
-						<td>${tempworker.club.name}</td>
 						<td><a href="${updateLink}">Edytuj</a></td>
 					</tr>
 				</c:forEach>
 			</table>
+			
+			<table class="reftab">
+				<tr>
+					<th>Klub</th>
+				</tr>
+
+				<c:forEach var="tempClu" items="${clu}">
+
+					<tr>
+						
+						<td>${tempClu.name}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			</div>
 		</div>
 	</div>
 </body>
