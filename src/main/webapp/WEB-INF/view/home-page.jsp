@@ -240,7 +240,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 
 					</security:authorize>
 
-					<security:authorize access="hasRole('ROLE_ADMINISTRATIVE')">
+					<!--<security:authorize access="hasRole('ROLE_ADMINISTRATIVE')">
 
 						<form:form action="${pageContext.request.contextPath}/leagues"
 							method="GET">
@@ -250,7 +250,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 
 						</form:form>
 
-					</security:authorize>
+					</security:authorize>-->
 
 					<security:authorize access="hasRole('ROLE_ADMINISTRATIVE')">
 
